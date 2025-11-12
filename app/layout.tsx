@@ -11,7 +11,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: 'Chanmin Kim',
-  description: 'Dreamer. Builder. Artist.',
+
 }
 
 export default function RootLayout({
