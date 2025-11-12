@@ -13,7 +13,30 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: 'Chanmin Kim',
-
+  description: 'Dreamer. Builder. Learner.',
+  metadataBase: new URL('https://chanminkim.com'),
+  openGraph: {
+    title: 'Chanmin Kim',
+    description: 'Dreamer. Builder. Learner.',
+    url: 'https://chanminkim.com',
+    siteName: 'Chanmin Kim',
+    type: 'website',
+    locale: 'ko_KR',
+    images: [
+      {
+        url: '/chanminkim.svg',
+        width: 1200,
+        height: 630,
+        alt: 'Chanmin Kim',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Chanmin Kim',
+    description: 'Dreamer. Builder. Learner.',
+    images: ['/chanminkim.svg'],
+  },
 }
 
 export default function RootLayout({
