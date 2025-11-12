@@ -13,7 +13,6 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: 'Chanmin Kim',
-  description: 'Dreamer. Builder. Learner.',
   metadataBase: new URL('https://chanminkim.com'),
   openGraph: {
     title: 'Chanmin Kim',
