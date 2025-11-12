@@ -1,8 +1,13 @@
 'use client'
 
 import { useCallback } from 'react'
+import dynamic from 'next/dynamic'
 import styles from './page.module.css'
-import Galaxy from '@/components/Galaxy'
+
+const Galaxy = dynamic(() => import('@/components/Galaxy'), {
+  ssr: false,
+  loading: () => null,
+})
 
 export default function Home() {
   const handleDonateClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {

@@ -7,6 +7,8 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ['300', '400', '500'],
   display: 'swap',
   variable: '--font-ibm-plex-mono',
+  preload: true,
+  fallback: ['IBM Plex Mono', 'monospace'],
 })
 
 export const metadata: Metadata = {
