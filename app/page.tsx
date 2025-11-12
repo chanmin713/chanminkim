@@ -55,6 +55,7 @@ export default function Home() {
 
       <main className={styles.content}>
         <h1 className={styles.name}>Chanmin Kim</h1>
+        <p className={styles.tagline}>Dreamer. Builder. Learner.</p>
       </main>
     </>
   )
