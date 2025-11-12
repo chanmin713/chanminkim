@@ -17,14 +17,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://chanminkim.com'),
   openGraph: {
     title: 'Chanmin Kim',
-    description: 'Dreamer. Builder. Learner.',
     url: 'https://chanminkim.com',
     siteName: 'Chanmin Kim',
     type: 'website',
     locale: 'ko_KR',
     images: [
       {
-        url: '/chanminkim.svg',
+        url: '/chanminkim.png',
         width: 1200,
         height: 630,
         alt: 'Chanmin Kim',
@@ -34,8 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Chanmin Kim',
-    description: 'Dreamer. Builder. Learner.',
-    images: ['/chanminkim.svg'],
+    images: ['/chanminkim.png'],
   },
 }
 
