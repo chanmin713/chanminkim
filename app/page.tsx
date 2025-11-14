@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from 'react'
 import dynamic from 'next/dynamic'
 import styles from './page.module.css'
 
@@ -9,6 +10,31 @@ const Galaxy = dynamic(() => import('@/components/Galaxy'), {
 })
 
 export default function Home() {
+  useEffect(() => {
+    // 모바일에서 스크롤 방지
+    const preventScroll = (e: TouchEvent) => {
+      if (e.touches.length > 1) return // 멀티터치 허용
+      e.preventDefault()
+    }
+
+    const preventWheel = (e: WheelEvent) => {
+      e.preventDefault()
+    }
+
+    const preventScrollEvent = (e: Event) => {
+      e.preventDefault()
+    }
+
+    document.addEventListener('touchmove', preventScroll, { passive: false })
+    document.addEventListener('wheel', preventWheel, { passive: false })
+    document.addEventListener('scroll', preventScrollEvent, { passive: false })
+
+    return () => {
+      document.removeEventListener('touchmove', preventScroll)
+      document.removeEventListener('wheel', preventWheel)
+      document.removeEventListener('scroll', preventScrollEvent)
+    }
+  }, [])
 
   return (
     <>
