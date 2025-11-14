@@ -1,6 +1,5 @@
 'use client'
 
-import { useCallback } from 'react'
 import dynamic from 'next/dynamic'
 import styles from './page.module.css'
 
@@ -10,13 +9,6 @@ const Galaxy = dynamic(() => import('@/components/Galaxy'), {
 })
 
 export default function Home() {
-  const handleDonateClick = useCallback((e: React.MouseEvent<HTMLAnchorElement>) => {
-    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || window.innerWidth <= 768
-    if (!isMobile) {
-      e.preventDefault()
-      alert('모바일에서만 가능합니다.')
-    }
-  }, [])
 
   return (
     <>
@@ -46,7 +38,6 @@ export default function Home() {
           <a href="https://www.instagram.com/chn_m1n/" target="_blank" rel="noopener noreferrer" className={styles.link}>Instagram</a>
           <a href="https://www.linkedin.com/in/chanmin-kim-4a62a937a/" target="_blank" rel="noopener noreferrer" className={styles.link}>LinkedIn</a>
           <a href="https://blog.naver.com/zzzangm1n" target="_blank" rel="noopener noreferrer" className={styles.link}>Blog</a>
-          <a href="https://qr.kakaopay.com/FIX2EsLv8" target="_blank" rel="noopener noreferrer" className={styles.link} onClick={handleDonateClick}>Donate</a>
         </nav>
         <footer className={styles.footer}>
           <p>&copy; 2025 Chanmin Kim. All rights reserved.</p>
