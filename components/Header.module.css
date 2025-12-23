@@ -519,61 +519,10 @@
     }
 
     .name {
-        font-size: clamp(2rem, 12vw, 6rem);
+        font-size: clamp(2.5rem, 15vw, 7rem);
         white-space: normal;
         max-width: calc(100vw - 2rem);
-        padding: 0 0.5rem;
-        word-break: break-word;
-    }
-}
-
-@media (max-width: 480px) {
-    .logo {
-        top: 1rem;
-        left: 1rem;
-    }
-
-    .logoText {
-        font-size: 1.25rem;
-    }
-
-    .hamburger {
-        top: 1rem;
-        right: 1rem;
-        width: 24px;
-        height: 26px;
-    }
-    
-    .hamburgerLine {
-        height: 2px;
-    }
-    
-    .hamburgerLine:nth-child(1) {
-        top: 4px;
-    }
-    
-    .hamburgerLine:nth-child(3) {
-        bottom: 4px;
-    }
-    
-    .mobileNav {
-        padding: 4rem 1.25rem 2rem 1.25rem;
-    }
-    
-    .mobileLink {
-        font-size: 1.0625rem;
-        padding: 1rem 0;
-    }
-
-    .headerContent {
-        padding: 0.75rem;
-    }
-
-    .name {
-        font-size: clamp(1.75rem, 10vw, 5rem);
-        white-space: normal;
-        max-width: calc(100vw - 1.5rem);
-        padding: 0 0.5rem;
+        padding: 0 1rem;
         word-break: break-word;
     }
 }
