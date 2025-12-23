@@ -1,9 +1,14 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import LiquidGlass from 'liquid-glass-react'
+import dynamic from 'next/dynamic'
 import { navigationLinks } from '@/lib/navigation'
 import styles from './DesktopHeader.module.css'
+
+const LiquidGlass = dynamic(() => import('liquid-glass-react'), {
+  ssr: false,
+  loading: () => null,
+})
 
 export default function Navigation() {
   const [isMounted, setIsMounted] = useState(false)

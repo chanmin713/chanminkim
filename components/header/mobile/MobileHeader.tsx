@@ -1,8 +1,13 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import LiquidGlass from 'liquid-glass-react'
+import dynamic from 'next/dynamic'
 import { usePathname } from 'next/navigation'
+
+const LiquidGlass = dynamic(() => import('liquid-glass-react'), {
+  ssr: false,
+  loading: () => null,
+})
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import HamburgerButton from './HamburgerButton'
 import MobileMenu from './MobileMenu'

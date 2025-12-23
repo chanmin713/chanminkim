@@ -1,10 +1,15 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import LiquidGlass from 'liquid-glass-react'
+import dynamic from 'next/dynamic'
 import { Mail, Instagram, Linkedin } from 'lucide-react'
 import { copyToClipboard } from '@/lib/clipboard'
 import styles from './contact.module.css'
+
+const LiquidGlass = dynamic(() => import('liquid-glass-react'), {
+  ssr: false,
+  loading: () => null,
+})
 
 const EMAIL = 'chanmin713@snu.ac.kr'
 
