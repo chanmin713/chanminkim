@@ -2,21 +2,19 @@
 
 import { navigationLinks } from '@/lib/navigation'
 import styles from './Header.module.css'
+import { useMobileMenu } from './MobileMenuContext'
 
-interface MobileMenuProps {
-  isOpen: boolean
-  onClose: () => void
-}
+export default function MobileMenu() {
+  const { isMenuOpen, closeMenu } = useMobileMenu()
 
-export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
   return (
-    <nav className={`${styles.mobileNav} ${isOpen ? styles.mobileNavOpen : ''}`}>
+    <nav className={`${styles.mobileNav} ${isMenuOpen ? styles.mobileNavOpen : ''}`}>
       {navigationLinks.map((link) => (
         <a
           key={link.href}
           href={link.href}
           className={styles.mobileLink}
-          onClick={onClose}
+          onClick={closeMenu}
           {...(link.openInNewTab
             ? { target: '_blank', rel: 'noopener noreferrer' }
             : {})}

@@ -1,17 +1,15 @@
 'use client'
 
 import styles from './Header.module.css'
+import { useMobileMenu } from './MobileMenuContext'
 
-interface HamburgerButtonProps {
-  isMenuOpen: boolean
-  onToggle: () => void
-}
+export default function HamburgerButton() {
+  const { isMenuOpen, toggleMenu } = useMobileMenu()
 
-export default function HamburgerButton({ isMenuOpen, onToggle }: HamburgerButtonProps) {
   return (
     <button
       className={styles.hamburger}
-      onClick={onToggle}
+      onClick={toggleMenu}
       aria-expanded={isMenuOpen}
       aria-label="메뉴 열기/닫기"
     >

@@ -3,7 +3,9 @@ import type { ReactNode } from 'react'
 import { IBM_Plex_Mono, Newsreader } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
+import MobileHeader from '@/components/MobileHeader'
 import PageBackground from '@/components/PageBackground'
+import { MobileMenuProvider } from '@/components/MobileMenuContext'
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
@@ -56,9 +58,12 @@ export default function RootLayout({
   return (
     <html lang="ko" className={`${ibmPlexMono.variable} ${newsReader.variable}`} style={{ backgroundColor: '#000000' }}>
       <body style={{ backgroundColor: '#000000' }}>
-        <PageBackground />
-        <Header />
-        {children}
+        <MobileMenuProvider>
+          <PageBackground />
+          <Header />
+          <MobileHeader />
+          {children}
+        </MobileMenuProvider>
       </body>
     </html>
   )
