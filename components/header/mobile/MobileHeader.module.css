@@ -1,31 +1,4 @@
-/* 모바일 헤더 바 */
-.headerBar {
-    position: fixed;
-    top: 1.5rem;
-    left: 1.5rem;
-    right: 1.5rem;
-    z-index: 30;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.4) 0%,
-        rgba(255, 255, 255, 0.2) 50%,
-        rgba(255, 255, 255, 0.3) 100%
-    );
-    backdrop-filter: blur(60px) saturate(200%);
-    -webkit-backdrop-filter: blur(60px) saturate(200%);
-    border-radius: 2rem;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 
-        0 8px 32px 0 rgba(0, 0, 0, 0.12),
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.6),
-        inset 0 -1px 0 0 rgba(255, 255, 255, 0.2);
-    pointer-events: auto;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* .headerBar 스타일은 이제 LiquidGlass 컴포넌트의 인라인 스타일로 처리됩니다 */
 
 /* 왼쪽 상단 로고 (모바일) */
 .logo {
@@ -43,7 +16,7 @@
 
 .logoText {
     font-family: var(--font-news-reader), serif;
-    font-size: 1.5rem;
+    font-size: 1.875rem;
     font-weight: 400;
     font-style: italic;
     letter-spacing: -0.02em;
@@ -114,33 +87,7 @@
     transform: translateY(-50%) rotate(-45deg);
 }
 
-/* 모바일 네비게이션 */
-.mobileNav {
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(
-        135deg,
-        rgba(0, 0, 0, 0.95) 0%,
-        rgba(0, 0, 0, 0.98) 100%
-    );
-    backdrop-filter: blur(40px) saturate(180%);
-    -webkit-backdrop-filter: blur(40px) saturate(180%);
-    padding: 5rem 2rem 2rem 2rem;
-    pointer-events: none;
-    opacity: 0;
-    z-index: 25;
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow-y: auto;
-}
-
-.mobileNavOpen {
-    pointer-events: auto;
-    opacity: 1;
-}
+/* .mobileNav 스타일은 이제 LiquidGlass 컴포넌트의 인라인 스타일로 처리됩니다 */
 
 .mobileLink {
     color: rgba(255, 255, 255, 0.95);
@@ -223,15 +170,10 @@
 
 /* 작은 모바일 화면 (640px 이하) */
 @media (max-width: 640px) {
-    .headerBar {
-        top: 1.25rem;
-        left: 1.25rem;
-        right: 1.25rem;
-        padding: 0.625rem 0.875rem;
-    }
+    /* .headerBar와 .mobileNav 스타일은 이제 LiquidGlass 컴포넌트의 인라인 스타일로 처리됩니다 */
 
     .logoText {
-        font-size: 1.25rem;
+        font-size: 1.625rem;
         line-height: 1;
         height: 26px;
         display: flex;
@@ -249,10 +191,6 @@
     
     .hamburgerLine:nth-child(3) {
         bottom: 5px;
-    }
-    
-    .mobileNav {
-        padding: 4.5rem 1.5rem 2rem 1.5rem;
     }
     
     .mobileLink {

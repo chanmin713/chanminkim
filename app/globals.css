@@ -111,6 +111,10 @@ body {
     --sidebar-accent-foreground: oklch(0.205 0 0);
     --sidebar-border: oklch(0.922 0 0);
     --sidebar-ring: oklch(0.708 0 0);
+    
+    /* 데스크톱 헤더 높이 통합 관리 */
+    --desktop-header-top: 3rem;
+    --desktop-header-height: 3.875rem;
 }
 
 .dark {

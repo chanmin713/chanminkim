@@ -8,16 +8,29 @@
     pointer-events: none;
 }
 
+/* PC 헤더 컨테이너 (로고 + 네비게이션 바) */
+.headerContainer {
+    position: fixed;
+    top: var(--desktop-header-top);
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: var(--desktop-header-height);
+    z-index: 30;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 /* 왼쪽 상단 로고 */
 .logo {
-    position: fixed;
-    top: 2rem;
+    position: relative;
     left: 2rem;
-    z-index: 30;
     pointer-events: auto;
     display: flex;
     align-items: center;
-    height: 3.875rem; /* 네비게이션 바와 같은 높이 */
+    height: 100%;
 }
 
 .logoLink {
@@ -27,7 +40,7 @@
 
 .logoText {
     font-family: var(--font-news-reader), serif;
-    font-size: 1.75rem;
+    font-size: 2.25rem;
     font-weight: 400;
     font-style: italic;
     letter-spacing: -0.02em;
@@ -43,55 +56,35 @@
     opacity: 0.8;
 }
 
-.navBar {
+/* 네비게이션 바 컨테이너 */
+.navBarContainer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.75rem;
+    pointer-events: auto;
+    font-family: var(--font-ibm-plex-mono), monospace;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 메인 페이지 네비게이션 (헤더 컨테이너 밖) */
+.navBarContainerStandalone {
     position: fixed;
-    top: 2rem;
+    top: var(--desktop-header-top);
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.625rem 1.5rem;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.4) 0%,
-        rgba(255, 255, 255, 0.2) 50%,
-        rgba(255, 255, 255, 0.3) 100%
-    );
-    backdrop-filter: blur(60px) saturate(200%);
-    -webkit-backdrop-filter: blur(60px) saturate(200%);
-    border-radius: 2.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 
-        0 8px 32px 0 rgba(0, 0, 0, 0.12),
-        inset 0 1px 0 0 rgba(255, 255, 255, 0.6),
-        inset 0 -1px 0 0 rgba(255, 255, 255, 0.2);
+    height: var(--desktop-header-height);
     pointer-events: auto;
     font-family: var(--font-ibm-plex-mono), monospace;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.navBar::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 2.5rem;
-    padding: 1px;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.8) 0%,
-        rgba(255, 255, 255, 0.2) 50%,
-        rgba(255, 255, 255, 0.4) 100%
-    );
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-    pointer-events: none;
 }
 
 .navLink {

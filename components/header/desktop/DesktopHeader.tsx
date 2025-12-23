@@ -13,11 +13,11 @@ export default function DesktopHeader() {
 
   return (
     <header className={styles.header}>
-      {/* 왼쪽 상단 로고 - 메인 페이지가 아닐 때만 표시 */}
-      {!isHomePage && <Logo />}
-
-      {/* 데스크톱 네비게이션 */}
-      <Navigation />
+      {/* PC 헤더 컨테이너 (로고 + 네비게이션 바 또는 네비게이션 바만) */}
+      <div className={styles.headerContainer}>
+        {!isHomePage && <Logo />}
+        <Navigation isHomePage={isHomePage} />
+      </div>
 
       {/* 중앙 큰 이름 - 메인 페이지에서만 표시 */}
       {isHomePage && <CenterName />}

@@ -20,9 +20,6 @@ export default function Contact() {
     <div className={styles.container}>
       <div className={styles.content}>
         <h1 className={styles.title}>Contact</h1>
-        <p className={styles.description}>
-          궁금한 점이 있으시면 언제든지 연락주세요.
-        </p>
         
         <div className={styles.contactList}>
           <button 

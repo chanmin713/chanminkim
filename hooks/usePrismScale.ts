@@ -13,12 +13,14 @@ const SCALE_VALUES = {
   large: 3.6,
 } as const
 
+type ScaleValue = typeof SCALE_VALUES[keyof typeof SCALE_VALUES]
+
 /**
  * 화면 크기에 따라 Prism 배경의 scale 값을 반환하는 훅
  * @returns 현재 화면 크기에 맞는 scale 값
  */
 export function usePrismScale() {
-  const [scale, setScale] = useState(SCALE_VALUES.large)
+  const [scale, setScale] = useState<ScaleValue>(SCALE_VALUES.large)
 
   useEffect(() => {
     const updateScale = () => {
