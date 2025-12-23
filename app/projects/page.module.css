@@ -1,0 +1,42 @@
+.container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: #000000;
+}
+
+.content {
+  max-width: 800px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-family: var(--font-news-reader), serif;
+}
+
+.description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 640px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.875rem;
+    margin-bottom: 2rem;
+  }
+}
+
