@@ -184,7 +184,7 @@
 }
 
 .hamburgerLine:nth-child(1) {
-    top: 4px;
+    top: 6px;
 }
 
 .hamburgerLine:nth-child(2) {
@@ -193,7 +193,7 @@
 }
 
 .hamburgerLine:nth-child(3) {
-    bottom: 4px;
+    bottom: 6px;
 }
 
 .hamburger[aria-expanded="true"] .hamburgerLine:nth-child(1) {
@@ -388,11 +388,11 @@
     }
     
     .hamburgerLine:nth-child(1) {
-        top: 3px;
+        top: 5px;
     }
     
     .hamburgerLine:nth-child(3) {
-        bottom: 3px;
+        bottom: 5px;
     }
     
     .mobileNav {
