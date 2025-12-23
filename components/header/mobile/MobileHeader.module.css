@@ -5,6 +5,9 @@
     left: 1.5rem;
     z-index: 30;
     pointer-events: auto;
+    display: flex;
+    align-items: center;
+    height: 28px; /* 햄버거 버튼과 같은 높이 */
 }
 
 .logoLink {
