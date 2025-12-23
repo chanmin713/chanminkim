@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 import { IBM_Plex_Mono, Newsreader } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <html lang="ko" className={`${ibmPlexMono.variable} ${newsReader.variable}`} style={{ backgroundColor: '#000000' }}>

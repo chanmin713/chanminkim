@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import { Mail, Instagram, Linkedin } from 'lucide-react'
 import styles from './contact.module.css'
 
