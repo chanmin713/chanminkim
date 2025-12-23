@@ -24,7 +24,7 @@
 
 .logoText {
     font-family: var(--font-news-reader), serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 400;
     font-style: italic;
     letter-spacing: -0.02em;
@@ -445,7 +445,7 @@
     }
 
     .logoText {
-        font-size: 1.25rem;
+        font-size: 1.75rem;
     }
 
     .navBar {
@@ -473,7 +473,7 @@
     }
 
     .logoText {
-        font-size: 1.125rem;
+        font-size: 1.5rem;
     }
 
     .hamburger {
@@ -508,7 +508,7 @@
     }
 
     .logoText {
-        font-size: 1rem;
+        font-size: 1.25rem;
     }
 
     .hamburger {
