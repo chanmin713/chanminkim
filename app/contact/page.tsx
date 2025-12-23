@@ -1,36 +1,18 @@
 'use client'
 
 import { Mail, Instagram, Linkedin } from 'lucide-react'
+import { copyToClipboard } from '@/lib/clipboard'
 import styles from './contact.module.css'
 
+const EMAIL = 'chanmin713@snu.ac.kr'
+
 export default function Contact() {
-  const copyEmail = async () => {
-    const email = 'chanmin713@snu.ac.kr'
-    
-    try {
-      await navigator.clipboard.writeText(email)
-      alert('이메일이 복사되었습니다: ' + email)
-    } catch (err) {
-      console.error('이메일 복사 실패:', err)
-      // 폴백: 텍스트 영역 생성하여 복사
-      const textArea = document.createElement('textarea')
-      textArea.value = email
-      textArea.style.position = 'fixed'
-      textArea.style.opacity = '0'
-      document.body.appendChild(textArea)
-      textArea.select()
-      try {
-        document.execCommand('copy')
-        alert('이메일이 복사되었습니다: ' + email)
-      } catch (fallbackErr) {
-        alert('이메일 복사에 실패했습니다. 수동으로 복사해주세요: ' + email)
-      }
-      // 안전하게 제거
-      if (textArea.parentNode) {
-        textArea.parentNode.removeChild(textArea)
-      } else {
-        textArea.remove()
-      }
+  const handleCopyEmail = async () => {
+    const success = await copyToClipboard(EMAIL)
+    if (success) {
+      alert(`이메일이 복사되었습니다: ${EMAIL}`)
+    } else {
+      alert(`이메일 복사에 실패했습니다. 수동으로 복사해주세요: ${EMAIL}`)
     }
   }
 
@@ -45,12 +27,12 @@ export default function Contact() {
         <div className={styles.contactList}>
           <button 
             className={styles.contactItem}
-            onClick={copyEmail}
+            onClick={handleCopyEmail}
           >
             <Mail size={24} />
             <div className={styles.contactInfo}>
               <span className={styles.contactLabel}>Email</span>
-              <span className={styles.contactValue}>chanmin713@snu.ac.kr</span>
+              <span className={styles.contactValue}>{EMAIL}</span>
             </div>
           </button>
           

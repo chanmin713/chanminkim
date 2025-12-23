@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
+import { usePrismScale } from '@/hooks/usePrismScale'
+import { usePreventScroll } from '@/hooks/usePreventScroll'
 import styles from './page.module.css'
 
 const Prism = dynamic(() => import('@/components/ui/Prism'), {
@@ -10,51 +11,8 @@ const Prism = dynamic(() => import('@/components/ui/Prism'), {
 })
 
 export default function Home() {
-  const [prismScale, setPrismScale] = useState(3.6)
-
-  useEffect(() => {
-    // 모바일에서 스크롤 방지
-    const preventScroll = (e: TouchEvent) => {
-      if (e.touches.length > 1) return // 멀티터치 허용
-      e.preventDefault()
-    }
-
-    const preventWheel = (e: WheelEvent) => {
-      e.preventDefault()
-    }
-
-    const preventScrollEvent = (e: Event) => {
-      e.preventDefault()
-    }
-
-    // 화면 크기에 따라 Prism scale 조정
-    const updateScale = () => {
-      const width = window.innerWidth
-      if (width <= 480) {
-        setPrismScale(2.2)
-      } else if (width <= 640) {
-        setPrismScale(2.6)
-      } else if (width <= 768) {
-        setPrismScale(3.0)
-      } else {
-        setPrismScale(3.6)
-      }
-    }
-
-    updateScale()
-    window.addEventListener('resize', updateScale)
-
-    document.addEventListener('touchmove', preventScroll, { passive: false })
-    document.addEventListener('wheel', preventWheel, { passive: false })
-    document.addEventListener('scroll', preventScrollEvent, { passive: false })
-
-    return () => {
-      window.removeEventListener('resize', updateScale)
-      document.removeEventListener('touchmove', preventScroll)
-      document.removeEventListener('wheel', preventWheel)
-      document.removeEventListener('scroll', preventScrollEvent)
-    }
-  }, [])
+  const prismScale = usePrismScale()
+  usePreventScroll()
 
   return (
     <>
