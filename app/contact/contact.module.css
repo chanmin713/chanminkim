@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-top: calc(var(--desktop-header-top) + var(--desktop-header-height));
   padding-left: 2rem;
   padding-right: 2rem;
   padding-bottom: 2rem;
@@ -24,7 +23,7 @@
 .title {
   font-size: 1.75rem;
   font-weight: 500;
-  margin: 0 0 3rem 0;
+  margin: 0 0 6rem 0;
   color: #ffffff;
   font-family: var(--font-ibm-plex-mono), monospace;
   letter-spacing: 0.05em;
@@ -148,15 +147,21 @@
 }
 
 /* 모바일 반응형 */
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .content {
+    width: 100%;
+    padding-top: 1.5rem;
   }
 
   .title {
     font-size: 1.5rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 4.5rem;
   }
 
   .contactList {
@@ -178,6 +183,17 @@
   .footer {
     padding: 0 1.5rem 1rem 1.5rem;
     font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .title {
+    margin-bottom: 4rem;
   }
 }
 
