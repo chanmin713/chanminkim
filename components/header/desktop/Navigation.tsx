@@ -5,11 +5,7 @@ import LiquidGlass from 'liquid-glass-react'
 import { navigationLinks } from '@/lib/navigation'
 import styles from './DesktopHeader.module.css'
 
-interface NavigationProps {
-  isHomePage?: boolean
-}
-
-export default function Navigation({ isHomePage = false }: NavigationProps) {
+export default function Navigation() {
   const [isMounted, setIsMounted] = useState(false)
 
   useEffect(() => {

@@ -16,7 +16,7 @@ export default function DesktopHeader() {
       {/* PC 헤더 컨테이너 (로고 + 네비게이션 바 또는 네비게이션 바만) */}
       <div className={styles.headerContainer}>
         {!isHomePage && <Logo />}
-        <Navigation isHomePage={isHomePage} />
+        <Navigation />
       </div>
 
       {/* 중앙 큰 이름 - 메인 페이지에서만 표시 */}
