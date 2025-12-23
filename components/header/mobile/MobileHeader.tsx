@@ -1,7 +1,5 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import LiquidGlass from 'liquid-glass-react'
 import { usePathname } from 'next/navigation'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
 import HamburgerButton from './HamburgerButton'
@@ -14,45 +12,17 @@ export default function MobileHeader() {
   const pathname = usePathname()
   const isHomePage = pathname === '/' || pathname === null
   const isSmallScreen = useMediaQuery('(max-width: 640px)') ?? false
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => {
-    // 마운트 후에만 transition 활성화 (초기 렌더링 애니메이션 방지)
-    setIsMounted(true)
-  }, [])
 
   return (
     <>
       {/* 모바일 헤더 바 */}
-      <LiquidGlass
-        displacementScale={120}
-        blurAmount={0.3}
-        saturation={180}
-        aberrationIntensity={4}
-        elasticity={0}
-        cornerRadius={32}
-        padding={isSmallScreen ? "0.625rem 0.875rem" : "0.75rem 1rem"}
-        mode="prominent"
-        overLight={false}
-        style={{
-          position: 'fixed',
-          top: isSmallScreen ? '2rem' : '2.5rem',
-          left: isSmallScreen ? '1.25rem' : '1.5rem',
-          right: isSmallScreen ? '1.25rem' : '1.5rem',
-          zIndex: 30,
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          pointerEvents: 'auto',
-          transition: isMounted ? 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
-        }}
-      >
+      <div className={`${styles.mobileHeaderBar} ${isSmallScreen ? styles.smallScreen : ''}`}>
         {/* 왼쪽 상단 로고 - 메인 페이지가 아닐 때만 표시 */}
         {!isHomePage && <MobileLogo />}
 
-        {/* 모바일 햄버거 버튼 */}
+        {/* 모바일 햄버거 버튼 - 오른쪽 정렬 */}
         <HamburgerButton />
-      </LiquidGlass>
+      </div>
 
       {/* 모바일 메뉴 */}
       <MobileMenu />

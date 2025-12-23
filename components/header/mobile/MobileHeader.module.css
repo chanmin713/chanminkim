@@ -1,3 +1,57 @@
+/* 모바일 헤더 바 */
+.mobileHeaderBar {
+    position: fixed;
+    top: 2.5rem;
+    left: 1.5rem;
+    right: 1.5rem;
+    z-index: 30;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.mobileHeaderBar.smallScreen {
+    top: 2rem;
+    left: 1.25rem;
+    right: 1.25rem;
+}
+
+/* 모바일 메뉴 오버레이 */
+.mobileMenuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    z-index: 25;
+    padding: 5rem 2rem 2rem 2rem;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow-y: auto;
+}
+
+.mobileMenuOverlay.smallScreen {
+    padding: 4.5rem 1.5rem 2rem 1.5rem;
+}
+
+.mobileMenuOverlay.menuOpen {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.mobileNav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
 /* .headerBar 스타일은 이제 LiquidGlass 컴포넌트의 인라인 스타일로 처리됩니다 */
 
 /* 왼쪽 상단 로고 (모바일) */
@@ -7,6 +61,7 @@
     align-items: center;
     height: 28px;
     pointer-events: auto;
+    margin-right: auto;
 }
 
 .logoLink {
@@ -35,6 +90,7 @@
 
 /* 햄버거 버튼 */
 .hamburger {
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -46,6 +102,7 @@
     padding: 0;
     pointer-events: auto;
     position: relative;
+    margin-left: auto;
 }
 
 .hamburgerLine {
