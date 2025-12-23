@@ -24,14 +24,17 @@
 
 .logoText {
     font-family: var(--font-news-reader), serif;
-    font-size: 0.9375rem;
+    font-size: 1.5rem;
     font-weight: 400;
     font-style: italic;
     letter-spacing: -0.02em;
     color: #ffffff;
     margin: 0;
     transition: opacity 0.3s ease;
-    line-height: 1;
+    line-height: 1.75;
+    height: 2.625rem;
+    display: flex;
+    align-items: center;
 }
 
 .logoLink:hover .logoText {
@@ -325,8 +328,11 @@
     }
 
     .logoText {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
         line-height: 1;
+        height: 28px;
+        display: flex;
+        align-items: center;
     }
 
     .navBar {
@@ -367,8 +373,11 @@
     }
 
     .logoText {
-        font-size: 0.875rem;
+        font-size: 1.25rem;
         line-height: 1;
+        height: 26px;
+        display: flex;
+        align-items: center;
     }
 
     .hamburger {
