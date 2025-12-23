@@ -3,94 +3,186 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding-top: calc(var(--desktop-header-top) + var(--desktop-header-height));
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
   background: #000000;
+  position: relative;
+  z-index: 10;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .content {
-  max-width: 600px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 1.75rem;
   font-weight: 500;
-  margin-bottom: 1rem;
+  margin: 0 0 3rem 0;
   color: #ffffff;
-  font-family: var(--font-news-reader), serif;
-}
-
-.description {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.7);
-  margin-bottom: 3rem;
-  line-height: 1.6;
+  font-family: var(--font-ibm-plex-mono), monospace;
+  letter-spacing: 0.05em;
 }
 
 .contactList {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  position: relative;
+  width: 100%;
+  height: 240px;
+}
+
+/* LiquidGlass 내부 콘텐츠 왼쪽 정렬 */
+.contactList :global(.relative) {
+  display: block !important;
+}
+
+.contactList :global(.relative) > div:last-child {
+  display: flex !important;
+  justify-content: flex-start !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+
+.contactList :global(.relative) > div:last-child > * {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: flex-start !important;
 }
 
 .contactItem {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding: 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  transition: all 0.3s ease;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: none;
   cursor: pointer;
   text-decoration: none;
-  color: inherit;
+  color: #ffffff;
+  font-family: var(--font-ibm-plex-mono), monospace;
+  text-align: left;
 }
 
-.contactItem:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  min-width: 20px;
+  flex-shrink: 0;
 }
 
 .contactInfo {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.25rem;
+  gap: 0.1875rem;
   flex: 1;
 }
 
 .contactLabel {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-family: var(--font-ibm-plex-mono), monospace;
 }
 
 .contactValue {
-  font-size: 1rem;
+  font-size: 0.9375rem;
   color: #ffffff;
+  font-family: var(--font-ibm-plex-mono), monospace;
+  white-space: nowrap;
 }
 
-/* 반응형 디자인 */
+.bottomContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+}
+
+.footer {
+  padding: 0 2rem 1rem 2rem;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  pointer-events: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.copyright {
+  margin: 0;
+  font-size: 0.75rem;
+  opacity: 0.7;
+  color: #ffffff;
+  font-family: var(--font-ibm-plex-mono), monospace;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 모바일 반응형 */
 @media (max-width: 640px) {
-  .title {
-    font-size: 2rem;
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
-  .description {
-    font-size: 0.875rem;
-    margin-bottom: 2rem;
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .contactList {
+    height: 220px;
   }
 
   .contactItem {
-    padding: 1rem;
-    gap: 1rem;
+    gap: 0.875rem;
+  }
+
+  .contactLabel {
+    font-size: 0.6875rem;
   }
 
   .contactValue {
     font-size: 0.875rem;
+  }
+
+  .footer {
+    padding: 0 1.5rem 1rem 1.5rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 0 1rem 0.75rem 1rem;
   }
 }

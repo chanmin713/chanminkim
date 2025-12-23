@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect, useState } from 'react'
 import LiquidGlass from 'liquid-glass-react'
 import { usePathname } from 'next/navigation'
 import { useMediaQuery } from '@/hooks/useMediaQuery'
@@ -13,6 +14,12 @@ export default function MobileHeader() {
   const pathname = usePathname()
   const isHomePage = pathname === '/' || pathname === null
   const isSmallScreen = useMediaQuery('(max-width: 640px)') ?? false
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    // 마운트 후에만 transition 활성화 (초기 렌더링 애니메이션 방지)
+    setIsMounted(true)
+  }, [])
 
   return (
     <>
@@ -37,7 +44,7 @@ export default function MobileHeader() {
           justifyContent: 'space-between',
           alignItems: 'center',
           pointerEvents: 'auto',
-          transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          transition: isMounted ? 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)' : 'none',
         }}
       >
         {/* 왼쪽 상단 로고 - 메인 페이지가 아닐 때만 표시 */}
