@@ -58,22 +58,11 @@ export default function Home() {
       </div>
 
       <div className={styles.bottomContainer}>
-        <nav className={styles.topLinks}>
-          <a href="mailto:chanmin713@snu.ac.kr" className={styles.link}>Contact</a>
-          <a href="https://github.com/chanmin713" target="_blank" rel="noopener noreferrer" className={styles.link}>GitHub</a>
-          <a href="https://www.instagram.com/chn_m1n/" target="_blank" rel="noopener noreferrer" className={styles.link}>Instagram</a>
-          <a href="https://www.linkedin.com/in/chanmin-kim-4a62a937a/" target="_blank" rel="noopener noreferrer" className={styles.link}>LinkedIn</a>
-          <a href="https://blog.naver.com/zzzangm1n" target="_blank" rel="noopener noreferrer" className={styles.link}>Blog</a>
-        </nav>
         <footer className={styles.footer}>
-          <p>&copy; 2025 Chanmin Kim. All rights reserved.</p>
+          <p className={styles.copyright}>&copy; 2025 Chanmin Kim. All rights reserved.</p>
         </footer>
       </div>
 
-      <main className={styles.content}>
-        <h1 className={styles.name}>Chanmin Kim</h1>
-        <p className={styles.tagline}>Dreamer. Builder. Learner.</p>
-      </main>
     </>
   )
 }

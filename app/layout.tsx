@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
-import { IBM_Plex_Mono } from 'next/font/google'
+import { IBM_Plex_Mono, Newsreader } from 'next/font/google'
 import './globals.css'
+import Header from '@/components/Header'
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
@@ -9,6 +10,15 @@ const ibmPlexMono = IBM_Plex_Mono({
   variable: '--font-ibm-plex-mono',
   preload: true,
   fallback: ['IBM Plex Mono', 'monospace'],
+})
+
+const newsReader = Newsreader({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  display: 'swap',
+  variable: '--font-news-reader',
+  preload: true,
+  fallback: ['serif'],
 })
 
 export const metadata: Metadata = {
@@ -42,8 +52,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ko" className={ibmPlexMono.variable}>
-      <body>{children}</body>
+    <html lang="ko" className={`${ibmPlexMono.variable} ${newsReader.variable}`}>
+      <body>
+        <Header />
+        {children}
+      </body>
     </html>
   )
 }
