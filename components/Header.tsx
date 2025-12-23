@@ -4,6 +4,12 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <nav className={styles.navBar}>
+        <a href="/about" className={styles.navLink}>
+          About
+        </a>
+        <a href="/projects" className={styles.navLink}>
+          Projects
+        </a>
         <a href="/blog" className={styles.navLink}>
           Blog
         </a>

@@ -1,15 +1,17 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import styles from './page.module.css'
 
-const Galaxy = dynamic(() => import('@/components/Galaxy'), {
+const Prism = dynamic(() => import('@/components/Prism'), {
   ssr: false,
   loading: () => null,
 })
 
 export default function Home() {
+  const [prismScale, setPrismScale] = useState(3.6)
+
   useEffect(() => {
     // 모바일에서 스크롤 방지
     const preventScroll = (e: TouchEvent) => {
@@ -25,11 +27,29 @@ export default function Home() {
       e.preventDefault()
     }
 
+    // 화면 크기에 따라 Prism scale 조정
+    const updateScale = () => {
+      const width = window.innerWidth
+      if (width <= 480) {
+        setPrismScale(2.2)
+      } else if (width <= 640) {
+        setPrismScale(2.6)
+      } else if (width <= 768) {
+        setPrismScale(3.0)
+      } else {
+        setPrismScale(3.6)
+      }
+    }
+
+    updateScale()
+    window.addEventListener('resize', updateScale)
+
     document.addEventListener('touchmove', preventScroll, { passive: false })
     document.addEventListener('wheel', preventWheel, { passive: false })
     document.addEventListener('scroll', preventScrollEvent, { passive: false })
 
     return () => {
+      window.removeEventListener('resize', updateScale)
       document.removeEventListener('touchmove', preventScroll)
       document.removeEventListener('wheel', preventWheel)
       document.removeEventListener('scroll', preventScrollEvent)
@@ -39,20 +59,17 @@ export default function Home() {
   return (
     <>
       <div className={styles.videoContainer}>
-        <Galaxy 
+        <Prism 
           transparent={true}
-          mouseInteraction={true}
-          mouseRepulsion={true}
-          density={1}
-          glowIntensity={0.3}
-          saturation={0}
-          hueShift={140}
-          twinkleIntensity={0.3}
-          rotationSpeed={0.1}
-          repulsionStrength={2}
-          autoCenterRepulsion={0}
-          starSpeed={0.5}
-          speed={1}
+          animationType="rotate"
+          timeScale={0.5}
+          height={3.5}
+          baseWidth={5.5}
+          scale={prismScale}
+          hueShift={0}
+          colorFrequency={1}
+          noise={0}
+          glow={1}
         />
         <div className={styles.videoOverlay}></div>
       </div>
