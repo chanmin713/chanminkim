@@ -29,9 +29,9 @@ export default function Header() {
   const copyEmail = async (e: React.MouseEvent) => {
     e.preventDefault()
     const email = 'chanmin713@snu.ac.kr'
+    
     try {
       await navigator.clipboard.writeText(email)
-      // 복사 성공 피드백 (선택사항)
       alert('이메일이 복사되었습니다: ' + email)
     } catch (err) {
       console.error('이메일 복사 실패:', err)
@@ -48,7 +48,12 @@ export default function Header() {
       } catch (fallbackErr) {
         alert('이메일 복사에 실패했습니다. 수동으로 복사해주세요: ' + email)
       }
-      document.body.removeChild(textArea)
+      // 안전하게 제거
+      if (textArea.parentNode) {
+        textArea.parentNode.removeChild(textArea)
+      } else {
+        textArea.remove()
+      }
     }
     closeContact()
   }
@@ -189,7 +194,10 @@ export default function Header() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.mobileContactLink}
-                onClick={closeMenu}
+                onClick={(e) => {
+                  setIsContactOpen(false)
+                  setTimeout(() => closeMenu(), 100)
+                }}
               >
                 <Instagram size={16} />
                 <span>Instagram</span>
@@ -199,7 +207,10 @@ export default function Header() {
                 target="_blank" 
                 rel="noopener noreferrer"
                 className={styles.mobileContactLink}
-                onClick={closeMenu}
+                onClick={(e) => {
+                  setIsContactOpen(false)
+                  setTimeout(() => closeMenu(), 100)
+                }}
               >
                 <Linkedin size={16} />
                 <span>LinkedIn</span>
