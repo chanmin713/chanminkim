@@ -1,7 +1,7 @@
 'use client'
 
 import { navigationLinks } from '@/lib/navigation'
-import styles from './Header.module.css'
+import styles from './MobileHeader.module.css'
 import { useMobileMenu } from './MobileMenuContext'
 
 export default function MobileMenu() {

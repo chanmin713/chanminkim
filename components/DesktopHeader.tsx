@@ -1,12 +1,12 @@
 'use client'
 
 import { usePathname } from 'next/navigation'
-import styles from './Header.module.css'
+import styles from './DesktopHeader.module.css'
 import Logo from './Logo'
 import Navigation from './Navigation'
 import CenterName from './CenterName'
 
-export default function Header() {
+export default function DesktopHeader() {
   const pathname = usePathname()
   // pathname이 null이거나 '/'일 때 메인 페이지로 간주
   const isHomePage = pathname === '/' || pathname === null

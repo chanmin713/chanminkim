@@ -1,8 +1,8 @@
 'use client'
 
-import styles from './DesktopHeader.module.css'
+import styles from './MobileHeader.module.css'
 
-export default function CenterName() {
+export default function MobileCenterName() {
   return (
     <div className={styles.headerContent}>
       <h1 className={styles.name}>Chanmin Kim</h1>

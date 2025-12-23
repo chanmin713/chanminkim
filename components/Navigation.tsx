@@ -1,7 +1,7 @@
 'use client'
 
 import { navigationLinks } from '@/lib/navigation'
-import styles from './Header.module.css'
+import styles from './DesktopHeader.module.css'
 
 export default function Navigation() {
   return (

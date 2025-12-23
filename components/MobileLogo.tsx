@@ -1,8 +1,8 @@
 'use client'
 
-import styles from './DesktopHeader.module.css'
+import styles from './MobileHeader.module.css'
 
-export default function Logo() {
+export default function MobileLogo() {
   return (
     <div className={styles.logo}>
       <a href="/" className={styles.logoLink}>

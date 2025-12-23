@@ -1,6 +1,6 @@
 'use client'
 
-import styles from './Header.module.css'
+import styles from './MobileHeader.module.css'
 import { useMobileMenu } from './MobileMenuContext'
 
 export default function HamburgerButton() {

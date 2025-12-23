@@ -2,8 +2,7 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { IBM_Plex_Mono, Newsreader } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/Header'
-import MobileHeader from '@/components/MobileHeader'
+import HeaderWrapper from '@/components/HeaderWrapper'
 import PageBackground from '@/components/PageBackground'
 import { MobileMenuProvider } from '@/components/MobileMenuContext'
 
@@ -60,8 +59,7 @@ export default function RootLayout({
       <body style={{ backgroundColor: '#000000' }}>
         <MobileMenuProvider>
           <PageBackground />
-          <Header />
-          <MobileHeader />
+          <HeaderWrapper />
           {children}
         </MobileMenuProvider>
       </body>
