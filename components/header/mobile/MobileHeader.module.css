@@ -223,9 +223,11 @@
 
 /* 작은 모바일 화면 (640px 이하) */
 @media (max-width: 640px) {
-    .logo {
+    .headerBar {
         top: 1.25rem;
         left: 1.25rem;
+        right: 1.25rem;
+        padding: 0.625rem 0.875rem;
     }
 
     .logoText {
@@ -237,8 +239,6 @@
     }
 
     .hamburger {
-        top: 1.25rem;
-        right: 1.25rem;
         width: 26px;
         height: 28px;
     }
