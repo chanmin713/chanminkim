@@ -5,7 +5,6 @@ import HamburgerButton from './HamburgerButton'
 import MobileMenu from './MobileMenu'
 import MobileLogo from './MobileLogo'
 import MobileCenterName from './MobileCenterName'
-import styles from './MobileHeader.module.css'
 
 export default function MobileHeader() {
   const pathname = usePathname()

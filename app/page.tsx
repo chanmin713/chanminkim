@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import dynamic from 'next/dynamic'
 import styles from './page.module.css'
 
-const Prism = dynamic(() => import('@/components/Prism'), {
+const Prism = dynamic(() => import('@/components/ui/Prism'), {
   ssr: false,
   loading: () => null,
 })

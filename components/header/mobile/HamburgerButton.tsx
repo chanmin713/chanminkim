@@ -1,7 +1,7 @@
 'use client'
 
 import styles from './MobileHeader.module.css'
-import { useMobileMenu } from './MobileMenuContext'
+import { useMobileMenu } from '../shared/MobileMenuContext'
 
 export default function HamburgerButton() {
   const { isMenuOpen, toggleMenu } = useMobileMenu()

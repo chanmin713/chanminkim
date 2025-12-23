@@ -2,9 +2,9 @@ import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 import { IBM_Plex_Mono, Newsreader } from 'next/font/google'
 import './globals.css'
-import HeaderWrapper from '@/components/HeaderWrapper'
-import PageBackground from '@/components/PageBackground'
-import { MobileMenuProvider } from '@/components/MobileMenuContext'
+import HeaderWrapper from '@/components/header/shared/HeaderWrapper'
+import PageBackground from '@/components/ui/PageBackground'
+import { MobileMenuProvider } from '@/components/header/shared/MobileMenuContext'
 
 const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],

@@ -2,7 +2,7 @@
 
 import { navigationLinks } from '@/lib/navigation'
 import styles from './MobileHeader.module.css'
-import { useMobileMenu } from './MobileMenuContext'
+import { useMobileMenu } from '../shared/MobileMenuContext'
 
 export default function MobileMenu() {
   const { isMenuOpen, closeMenu } = useMobileMenu()

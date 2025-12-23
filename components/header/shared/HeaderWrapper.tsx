@@ -1,8 +1,8 @@
 'use client'
 
 import { useMediaQuery } from '@/hooks/useMediaQuery'
-import DesktopHeader from './DesktopHeader'
-import MobileHeader from './MobileHeader'
+import DesktopHeader from '../desktop/DesktopHeader'
+import MobileHeader from '../mobile/MobileHeader'
 
 export default function HeaderWrapper() {
   // 768px 이상이면 데스크톱, 미만이면 모바일
