@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import tailwindcssAnimate from "tailwindcss-animate";
 
 const config: Config = {
   content: [
@@ -10,7 +9,6 @@ const config: Config = {
   theme: {
     extend: {},
   },
-  plugins: [tailwindcssAnimate],
+  plugins: [],
 };
 export default config;
-
