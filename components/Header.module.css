@@ -472,11 +472,12 @@
     }
 
     .name {
-        font-size: clamp(2.5rem, 15vw, 7rem);
-        white-space: normal;
+        font-size: clamp(2.5rem, 12vw, 6rem);
+        white-space: nowrap;
         max-width: calc(100vw - 3rem);
         padding: 0 1rem;
-        word-break: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
@@ -519,11 +520,12 @@
     }
 
     .name {
-        font-size: clamp(2.5rem, 15vw, 7rem);
-        white-space: normal;
+        font-size: clamp(2rem, 10vw, 5rem);
+        white-space: nowrap;
         max-width: calc(100vw - 2rem);
         padding: 0 1rem;
-        word-break: break-word;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
