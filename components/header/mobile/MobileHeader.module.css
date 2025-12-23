@@ -1,20 +1,37 @@
-/* 모바일 헤더 바 */
-.mobileHeaderBar {
+/* 모바일 헤더 바 위치 래퍼 */
+.mobileHeaderBarWrapper {
     position: fixed;
-    top: 2.5rem;
-    left: 1.5rem;
-    right: 1.5rem;
+    top: 2rem;
+    left: 0.75rem;
+    right: 0.75rem;
+    height: 60px;
     z-index: 30;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    pointer-events: auto;
+    pointer-events: none;
 }
 
-.mobileHeaderBar.smallScreen {
-    top: 2rem;
-    left: 1.25rem;
-    right: 1.25rem;
+.mobileHeaderBarWrapper.smallScreen {
+    top: 1.25rem;
+    left: 0.5rem;
+    right: 0.5rem;
+    height: 56px;
+}
+
+/* LiquidGlass 내부 glass가 전체 너비 차지 */
+.mobileHeaderBarWrapper :global(.glass) {
+    width: 100% !important;
+}
+
+.mobileHeaderBarWrapper :global(.glass) > div {
+    width: 100% !important;
+}
+
+/* 헤더 바 내부 콘텐츠 */
+.headerBarContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
 }
 
 /* 모바일 메뉴 오버레이 */
@@ -27,18 +44,18 @@
     display: flex;
     flex-direction: column;
     z-index: 25;
-    padding: 5rem 2rem 2rem 2rem;
-    background: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    padding: 6.5rem 2rem 2rem 2rem;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     overflow-y: auto;
 }
 
 .mobileMenuOverlay.smallScreen {
-    padding: 4.5rem 1.5rem 2rem 1.5rem;
+    padding: 5.5rem 1.5rem 2rem 1.5rem;
 }
 
 .mobileMenuOverlay.menuOpen {
@@ -50,6 +67,7 @@
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-top: 0.5rem;
 }
 
 /* .headerBar 스타일은 이제 LiquidGlass 컴포넌트의 인라인 스타일로 처리됩니다 */
@@ -59,33 +77,40 @@
     position: relative;
     display: flex;
     align-items: center;
-    height: 28px;
+    height: 32px;
     pointer-events: auto;
-    margin-right: auto;
+    flex-shrink: 0;
 }
 
 .logoLink {
     text-decoration: none;
     color: inherit;
-}
-
-.logoText {
-    font-family: var(--font-news-reader), serif;
-    font-size: 1.875rem;
-    font-weight: 400;
-    font-style: italic;
-    letter-spacing: -0.02em;
-    color: #ffffff;
-    margin: 0;
-    transition: opacity 0.3s ease;
-    line-height: 1;
-    height: 28px;
     display: flex;
     align-items: center;
 }
 
+.logoText {
+    font-family: var(--font-news-reader), serif;
+    font-size: 1.75rem;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: -0.015em;
+    color: #ffffff;
+    margin: 0;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    transform: translateY(1px);
+}
+
 .logoLink:hover .logoText {
-    opacity: 0.8;
+    opacity: 0.85;
+}
+
+.logoLink:active .logoText {
+    transform: scale(0.98);
 }
 
 /* 햄버거 버튼 */
@@ -94,29 +119,40 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 28px;
-    height: 28px;
+    width: 32px;
+    height: 32px;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0;
+    padding: 4px;
     pointer-events: auto;
     position: relative;
-    margin-left: auto;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.hamburger:hover {
+    transform: scale(1.05);
+}
+
+.hamburger:active {
+    transform: scale(0.95);
 }
 
 .hamburgerLine {
-    width: 100%;
-    height: 2.5px;
+    width: 22px;
+    height: 2px;
     background-color: rgba(255, 255, 255, 0.95);
     border-radius: 2px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     transform-origin: center;
     position: absolute;
+    left: 50%;
+    margin-left: -11px;
 }
 
 .hamburgerLine:nth-child(1) {
-    top: 6px;
+    top: 8px;
 }
 
 .hamburgerLine:nth-child(2) {
@@ -125,7 +161,7 @@
 }
 
 .hamburgerLine:nth-child(3) {
-    bottom: 6px;
+    bottom: 8px;
 }
 
 .hamburger[aria-expanded="true"] .hamburgerLine:nth-child(1) {
@@ -147,16 +183,17 @@
 /* .mobileNav 스타일은 이제 LiquidGlass 컴포넌트의 인라인 스타일로 처리됩니다 */
 
 .mobileLink {
-    color: rgba(255, 255, 255, 0.95);
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
-    font-size: 1.3125rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 400;
     font-family: var(--font-ibm-plex-mono), monospace;
-    letter-spacing: 0.02em;
-    padding: 1.375rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: block;
+    letter-spacing: 0.01em;
+    padding: 1.25rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
     text-align: left;
     background: transparent;
     border-left: none;
@@ -164,6 +201,21 @@
     border-top: none;
     cursor: pointer;
     width: 100%;
+    position: relative;
+}
+
+.mobileLink::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scaleX(0);
+    width: 3px;
+    height: 60%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: left;
 }
 
 .mobileLink:last-child {
@@ -173,9 +225,13 @@
 .mobileLink:hover,
 .mobileLink:active {
     color: rgba(255, 255, 255, 1);
-    padding-left: 0.5rem;
-    opacity: 1;
+    padding-left: 1rem;
     background: transparent;
+}
+
+.mobileLink:hover::before,
+.mobileLink:active::before {
+    transform: translateY(-50%) scaleX(1);
 }
 
 @keyframes fadeInUp {
@@ -214,7 +270,7 @@
     margin: 0 auto;
     text-align: center;
     white-space: nowrap;
-    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
     pointer-events: auto;
     width: 100%;
     max-width: calc(100vw - 3rem);
@@ -227,32 +283,37 @@
 
 /* 작은 모바일 화면 (640px 이하) */
 @media (max-width: 640px) {
-    /* .headerBar와 .mobileNav 스타일은 이제 LiquidGlass 컴포넌트의 인라인 스타일로 처리됩니다 */
+    .logo {
+        height: 28px;
+    }
 
     .logoText {
-        font-size: 1.625rem;
+        font-size: 1.5rem;
         line-height: 1;
-        height: 26px;
-        display: flex;
-        align-items: center;
     }
 
     .hamburger {
-        width: 26px;
+        width: 28px;
         height: 28px;
+        padding: 2px;
+    }
+
+    .hamburgerLine {
+        width: 20px;
+        margin-left: -10px;
     }
     
     .hamburgerLine:nth-child(1) {
-        top: 5px;
+        top: 6px;
     }
     
     .hamburgerLine:nth-child(3) {
-        bottom: 5px;
+        bottom: 6px;
     }
     
     .mobileLink {
-        font-size: 1.1875rem;
-        padding: 1.125rem 0;
+        font-size: 1.25rem;
+        padding: 1rem 0;
     }
 
     .headerContent {

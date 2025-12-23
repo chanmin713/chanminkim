@@ -50,6 +50,7 @@
     line-height: 1;
     display: flex;
     align-items: center;
+    transform: translateY(1px);
 }
 
 .logoLink:hover .logoText {
@@ -185,7 +186,7 @@
     margin: 0 auto;
     text-align: center;
     white-space: nowrap;
-    animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+    animation: fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
     pointer-events: auto;
     width: 100%;
     max-width: calc(100vw - 4rem);
