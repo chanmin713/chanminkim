@@ -152,12 +152,6 @@
   margin-top: 0.25rem;
 }
 
-@media (max-width: 767px) {
-  .home-archives-list .archive-group-list {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 1.25rem;
-  }
-}
 
 .home-archives-view-all {
   display: inline-block;
@@ -203,13 +197,14 @@
 
   .archive-group-list {
     display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
   }
 
   @media (min-width: 768px) {
     .archive-group-list {
       grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
     }
   }
 
