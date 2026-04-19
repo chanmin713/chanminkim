@@ -92,12 +92,12 @@ export default async function Home() {
                                 <div className="archive-card-media-stack" aria-hidden="true">
                                   {imageList.slice(0, 3).map((src, index) => (
                                     <div key={`${item.id}-home-stack-${src}-${index}`} className={`archive-card-media-stack-layer archive-card-media-stack-layer-${index + 1}`}>
-                                      <Image src={src} alt="" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
+                                      <Image src={src} alt="" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" priority />
                                     </div>
                                   ))}
                                 </div>
                               ) : (
-                                <Image src={primaryImage} alt={title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
+                                <Image src={primaryImage} alt={title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" priority />
                               )}
                             </div>
                           ) : (

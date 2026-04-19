@@ -114,7 +114,7 @@ export default async function ArchiveDetailPage({ params }: PageProps) {
 
         {imageList.length ? (
           <div className="archive-detail-hero relative">
-            <Image src={imageList[0]} alt={item.title || 'Archive image'} fill sizes="(max-width: 768px) 100vw, 48rem" className="object-contain" />
+            <Image src={imageList[0]} alt={item.title || 'Archive image'} fill sizes="(max-width: 768px) 100vw, 48rem" className="object-contain" priority />
           </div>
         ) : null}
 
