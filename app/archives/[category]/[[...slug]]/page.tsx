@@ -86,7 +86,7 @@ export default async function ArchiveDetailPage({ params }: PageProps) {
   const backHref = item.folderId ? `/archives?category=${encodeURIComponent((item.category || '').toLowerCase())}&folder=${encodeURIComponent(item.folderId)}` : '/archives'
 
   const dateLabel = formatDateLabel({ date: item.date, unreleased: item.unreleased })
-  const hasKicker = Boolean(dateLabel || item.artist || item.trackCount)
+  const hasKicker = Boolean(dateLabel || item.artist)
   const imageList = item.images?.length ? item.images : (item.image ? [item.image] : [])
 
   return (
@@ -101,13 +101,7 @@ export default async function ArchiveDetailPage({ params }: PageProps) {
         {hasKicker ? (
           <div className="archive-detail-page-kicker">
             {item.artist ? <span>{item.artist}</span> : null}
-            {(dateLabel || item.trackCount) ? (
-              <span>
-                {dateLabel}
-                {dateLabel && item.trackCount ? ' · ' : ''}
-                {item.trackCount ? `${item.trackCount} Tracks` : ''}
-              </span>
-            ) : null}
+            {dateLabel ? <span>{dateLabel}</span> : null}
           </div>
         ) : null}
 
