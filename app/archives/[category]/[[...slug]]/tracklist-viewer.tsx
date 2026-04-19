@@ -11,9 +11,14 @@ export function formatDuration(millis: number) {
 
 export function formatTotalDuration(millis: number) {
   const totalSeconds = Math.floor(millis / 1000)
-  const minutes = Math.floor(totalSeconds / 60)
+  const hours = Math.floor(totalSeconds / 3600)
+  const minutes = Math.floor((totalSeconds % 3600) / 60)
   const seconds = totalSeconds % 60
-  return `총 ${minutes}분 ${seconds}초`
+  
+  if (hours > 0) {
+    return `${hours} hr ${minutes} min`
+  }
+  return `${minutes} min ${seconds} sec`
 }
 
 export function TracklistViewer({ tracks }: { tracks: ArchiveTrack[] }) {
@@ -23,8 +28,8 @@ export function TracklistViewer({ tracks }: { tracks: ArchiveTrack[] }) {
     <div className="archive-detail-tracklist mt-12 pt-8 border-t border-gray-100/50">
       <div className="flex items-center justify-between mb-5">
         <h2 className="text-sm font-semibold m-0 text-gray-800 tracking-wider">TRACKLIST</h2>
-        <span className="text-xs text-gray-400 tracking-wide">
-          {tracks.length}곡, {formatTotalDuration(totalTime)}
+        <span className="text-[11px] text-gray-400 tracking-wide uppercase">
+          {tracks.length} Tracks, {formatTotalDuration(totalTime)}
         </span>
       </div>
 
