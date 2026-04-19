@@ -5,7 +5,7 @@ import { timeValue } from '@/lib/archive-utils'
 export default async function Home() {
   const latestArchiveItems = (await getArchives())
     .sort((a, b) => timeValue(b.date) - timeValue(a.date))
-    .slice(0, 3)
+    .slice(0, 6)
 
   return (
     <main>
