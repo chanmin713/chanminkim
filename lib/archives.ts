@@ -5,6 +5,15 @@ import { hydrateMusicItem } from './music'
 import { hydrateScrapItem } from './og'
 import { timeValue } from './archive-utils'
 
+export type ArchiveTrack = {
+  id: string
+  title: string
+  artist: string
+  durationMillis: number
+  previewUrl: string
+  trackNumber: number
+}
+
 export type ArchiveItem = {
   id: string
   title: string
@@ -22,6 +31,7 @@ export type ArchiveItem = {
   youtubeMusic?: string
   trackCount?: number
   copyright?: string
+  tracks?: ArchiveTrack[]
   metadataMode?: 'manual' | 'apple-auto'
   linkMode?: 'manual' | 'songlink-auto'
   unreleased?: boolean
@@ -155,6 +165,7 @@ export const getArchives = cache(async function getArchives(): Promise<ArchiveIt
         youtubeMusic: raw.youtubeMusic || '',
         trackCount: raw.trackCount,
         copyright: raw.copyright || '',
+        tracks: raw.tracks || undefined,
         metadataMode: isAutoMusic ? 'apple-auto' : 'manual',
         linkMode: (isAutoMusic || isManualMusic) ? 'songlink-auto' : 'manual',
         unreleased: isManualMusic ? true : (raw.unreleased || false),

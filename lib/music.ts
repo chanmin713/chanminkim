@@ -8,6 +8,12 @@ type ITunesLookupResult = {
   releaseDate?: string
   trackCount?: number
   copyright?: string
+  wrapperType?: string
+  kind?: string
+  trackId?: number
+  trackTimeMillis?: number
+  previewUrl?: string
+  trackNumber?: number
 }
 
 type ITunesLookupResponse = {
@@ -47,23 +53,36 @@ async function fetchAppleMusicMetadata(url: string) {
   if (!appleId) return null
 
   try {
-    const response = await fetch(`https://itunes.apple.com/lookup?id=${appleId}`, {
+    const response = await fetch(`https://itunes.apple.com/lookup?id=${appleId}&entity=song`, {
       next: { revalidate: 60 * 60 * 24 },
     })
 
     if (!response.ok) return null
 
     const payload = (await response.json()) as ITunesLookupResponse
-    const first = payload.results?.[0]
-    if (!first) return null
+    const collection = payload.results?.find(r => r.wrapperType === 'collection') || payload.results?.[0]
+    if (!collection) return null
+
+    const rawTracks = payload.results?.filter(r => r.wrapperType === 'track' && r.kind === 'song') || []
+    const tracks = rawTracks
+      .sort((a, b) => (a.trackNumber || 0) - (b.trackNumber || 0))
+      .map(t => ({
+        id: String(t.trackId),
+        title: t.trackName || '',
+        artist: t.artistName || '',
+        durationMillis: t.trackTimeMillis || 0,
+        previewUrl: t.previewUrl || '',
+        trackNumber: t.trackNumber || 0,
+      }))
 
     return {
-      title: first.trackName || first.collectionName,
-      artist: first.artistName,
-      image: first.artworkUrl100?.replace('100x100bb', '1200x1200bb'),
-      date: first.releaseDate?.slice(0, 10),
-      trackCount: first.trackCount,
-      copyright: first.copyright,
+      title: collection.trackName || collection.collectionName,
+      artist: collection.artistName,
+      image: collection.artworkUrl100?.replace('100x100bb', '1200x1200bb'),
+      date: collection.releaseDate?.slice(0, 10),
+      trackCount: collection.trackCount,
+      copyright: collection.copyright,
+      tracks: tracks.length > 0 ? tracks : undefined,
     }
   } catch {
     return null
@@ -106,6 +125,7 @@ export async function hydrateMusicItem(item: ArchiveItem): Promise<ArchiveItem> 
       date: item.date || metadata?.date || '',
       trackCount: item.trackCount || metadata?.trackCount,
       copyright: item.copyright || metadata?.copyright,
+      tracks: item.tracks || metadata?.tracks,
     }
   }
 

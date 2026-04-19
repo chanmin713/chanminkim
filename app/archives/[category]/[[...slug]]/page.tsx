@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getArchiveBySlugPath, getArchives } from '@/lib/archives'
 import { formatDateLabel } from '@/lib/archive-utils'
+import { TracklistViewer } from './tracklist-viewer'
 
 type RouteParams = {
   category: string
@@ -152,6 +153,10 @@ export default async function ArchiveDetailPage({ params }: PageProps) {
         ) : null}
 
         {item.description ? <p className="archive-detail-description">{renderLinkifiedText(item.description)}</p> : null}
+
+        {item.tracks && item.tracks.length > 0 ? (
+          <TracklistViewer tracks={item.tracks} />
+        ) : null}
 
         {item.copyright ? (
           <div className="mt-8 pt-4 border-t border-gray-100/50 text-[0.7rem] text-gray-400">
