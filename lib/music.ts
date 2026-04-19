@@ -12,7 +12,6 @@ type ITunesLookupResult = {
   kind?: string
   trackId?: number
   trackTimeMillis?: number
-  previewUrl?: string
   trackNumber?: number
 }
 
@@ -70,7 +69,6 @@ async function fetchAppleMusicMetadata(url: string) {
         title: t.trackName || '',
         artist: t.artistName || '',
         durationMillis: t.trackTimeMillis || 0,
-        previewUrl: t.previewUrl || '',
         trackNumber: t.trackNumber || 0,
       }))
 

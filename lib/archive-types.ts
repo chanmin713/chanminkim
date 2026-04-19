@@ -3,7 +3,6 @@ export type ArchiveTrack = {
   title: string
   artist: string
   durationMillis: number
-  previewUrl: string
   trackNumber: number
 }
 

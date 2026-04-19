@@ -53,7 +53,7 @@ export function buildFolderId(raw: Partial<ArchiveFolder>, index: number, seen: 
   return count === 1 ? base : `${base}-${count}`
 }
 
-export function buildFolderAncestors(folderId: string | null | undefined, foldersById: Map<string, ArchiveFolder>) {
+function buildFolderAncestors(folderId: string | null | undefined, foldersById: Map<string, ArchiveFolder>) {
   const segments: string[] = []
   const seen = new Set<string>()
 
