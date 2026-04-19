@@ -199,7 +199,7 @@
 
     .archive-detail-streaming-bar {
       gap: 1rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }
 
     .archive-detail-streaming-links {
@@ -208,7 +208,7 @@
     }
 
     .archive-detail-tracklist {
-      margin-top: 2.5rem;
+      margin-top: 1.5rem;
     }
 
     .archive-track-title {
