@@ -1,3 +1,16 @@
 {
-  "items": []
+  "items": [
+    {
+      "category": "Music",
+      "pinned": false,
+      "id": "",
+      "appleMusic": "https://music.apple.com/kr/album/love%24ick/1889096199"
+    },
+    {
+      "category": "Music",
+      "pinned": false,
+      "id": "",
+      "appleMusic": "https://music.apple.com/kr/album/lovesick/1887115324"
+    }
+  ]
 }
