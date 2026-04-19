@@ -99,8 +99,8 @@ export default async function ArchiveDetailPage({ params }: PageProps) {
 
         {hasKicker ? (
           <div className="archive-detail-page-kicker">
-            {dateLabel ? <span>{dateLabel}</span> : null}
             {item.artist ? <span>{item.artist}</span> : null}
+            {dateLabel ? <span>{dateLabel}</span> : null}
           </div>
         ) : null}
 

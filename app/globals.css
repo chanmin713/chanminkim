@@ -381,9 +381,9 @@
 
   .archive-detail-page-kicker {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin-top: 0.45rem;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin-top: 0.5rem;
     font-size: 0.875rem;
     line-height: 1.5;
     color: #666;
