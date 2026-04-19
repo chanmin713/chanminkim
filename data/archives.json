@@ -2,6 +2,18 @@
   "items": [
     {
       "category": "Music",
+      "pinned": true,
+      "id": "",
+      "appleMusic": "https://music.apple.com/kr/album/ripple-effect/1064374017"
+    },
+    {
+      "category": "Music",
+      "pinned": false,
+      "id": "",
+      "appleMusic": "https://music.apple.com/kr/album/keung/1463936919"
+    },
+    {
+      "category": "Music",
       "pinned": false,
       "id": "",
       "appleMusic": "https://music.apple.com/kr/album/love%24ick/1889096199"
