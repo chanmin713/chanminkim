@@ -367,13 +367,7 @@
     85%, 100% { transform: translateX(min(0px, calc(100cqw - 100%))); }
   }
 
-  @media (max-width: 768px) {
-    .marquee-text {
-      animation: none;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-  }
+
 
   .archive-pin-icon {
     width: 1em;
