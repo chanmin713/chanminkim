@@ -278,10 +278,7 @@
 }
 
 .archive-folder-media {
-  background: #f3f3f0;
-  border: 1px solid #e8e8e4;
-  border-radius: 0.55rem;
-  padding: 0.45rem;
+  padding: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
