@@ -2,6 +2,34 @@
   "items": [
     {
       "category": "Music",
+      "pinned": false,
+      "id": "",
+      "folderId": "",
+      "appleMusic": "https://music.apple.com/kr/album/kc3/1855824800"
+    },
+    {
+      "category": "Music",
+      "pinned": false,
+      "id": "",
+      "folderId": "",
+      "appleMusic": "https://music.apple.com/kr/album/kc2-5/1831468835"
+    },
+    {
+      "category": "Music",
+      "pinned": false,
+      "id": "",
+      "folderId": "",
+      "appleMusic": "https://music.apple.com/kr/album/kctape-vol-2/1759510192"
+    },
+    {
+      "category": "Music",
+      "pinned": false,
+      "id": "",
+      "folderId": "",
+      "appleMusic": "https://music.apple.com/kr/album/kctape-vol-1/1747247982"
+    },
+    {
+      "category": "Music",
       "pinned": true,
       "id": "",
       "appleMusic": "https://music.apple.com/kr/album/ripple-effect/1064374017"
