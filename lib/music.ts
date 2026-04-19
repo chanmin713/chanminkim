@@ -6,6 +6,8 @@ type ITunesLookupResult = {
   trackName?: string
   artworkUrl100?: string
   releaseDate?: string
+  trackCount?: number
+  copyright?: string
 }
 
 type ITunesLookupResponse = {
@@ -60,6 +62,8 @@ async function fetchAppleMusicMetadata(url: string) {
       artist: first.artistName,
       image: first.artworkUrl100?.replace('100x100bb', '1200x1200bb'),
       date: first.releaseDate?.slice(0, 10),
+      trackCount: first.trackCount,
+      copyright: first.copyright,
     }
   } catch {
     return null
@@ -100,6 +104,8 @@ export async function hydrateMusicItem(item: ArchiveItem): Promise<ArchiveItem> 
       artist,
       image: item.image || metadata?.image,
       date: item.date || metadata?.date || '',
+      trackCount: item.trackCount || metadata?.trackCount,
+      copyright: item.copyright || metadata?.copyright,
     }
   }
 

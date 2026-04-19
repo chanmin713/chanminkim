@@ -20,6 +20,8 @@ export type ArchiveItem = {
   appleMusic?: string
   spotify?: string
   youtubeMusic?: string
+  trackCount?: number
+  copyright?: string
   metadataMode?: 'manual' | 'apple-auto'
   linkMode?: 'manual' | 'songlink-auto'
   unreleased?: boolean
@@ -151,6 +153,8 @@ export const getArchives = cache(async function getArchives(): Promise<ArchiveIt
         appleMusic: raw.appleMusic || '',
         spotify: raw.spotify || '',
         youtubeMusic: raw.youtubeMusic || '',
+        trackCount: raw.trackCount,
+        copyright: raw.copyright || '',
         metadataMode: isAutoMusic ? 'apple-auto' : 'manual',
         linkMode: (isAutoMusic || isManualMusic) ? 'songlink-auto' : 'manual',
         unreleased: isManualMusic ? true : (raw.unreleased || false),

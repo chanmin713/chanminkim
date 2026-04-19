@@ -79,6 +79,8 @@ collections:
                   - { label: YouTube Music, name: youtubeMusic, widget: string, required: false, pattern: ['^https?://.+$', 'Enter a full URL'] }
                   - { label: Memo, name: description, widget: text, required: false }
                   - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
+                  - { label: Track Count, name: trackCount, widget: number, required: false }
+                  - { label: Copyright, name: copyright, widget: string, required: false }
                   - { label: ID, name: id, widget: uuid, required: false }
 
               - label: 'Music (unreleased)'
@@ -114,6 +116,8 @@ collections:
                   - { label: YouTube Music, name: youtubeMusic, widget: string, required: false, pattern: ['^https?://.+$', 'Enter a full URL'] }
                   - { label: Memo, name: description, widget: text, required: false }
                   - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
+                  - { label: Track Count, name: trackCount, widget: number, required: false }
+                  - { label: Copyright, name: copyright, widget: string, required: false }
                   - { label: ID, name: id, widget: uuid, required: false }
 
               - label: 'Photo'
