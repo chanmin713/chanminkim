@@ -278,15 +278,14 @@
 }
 
 .archive-folder-media {
-  padding: 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
 }
 
 .archive-folder-media-icon {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 1.25rem;
+  width: calc(100% - 2.5rem);
+  height: calc(100% - 2.5rem);
   object-fit: contain;
   opacity: 1;
 }
