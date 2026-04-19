@@ -74,8 +74,7 @@
     display: flex;
     align-items: center;
     gap: 1.25rem;
-    margin-top: 1.25rem;
-    padding: 0.8rem 0;
+    margin-top: 2rem;
   }
 
   .archive-detail-streaming-label {
@@ -101,8 +100,8 @@
   }
 
   .archive-detail-tracklist {
-    margin-top: 0.4rem;
-    padding-top: 1.2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
 
@@ -183,7 +182,7 @@
   }
 
   .archive-detail-copyright {
-    margin-top: 2rem;
+    margin-top: 1.2rem;
     padding-top: 1rem;
     border-top: 1px solid rgba(0, 0, 0, 0.03);
     font-size: 0.65rem;
