@@ -99,42 +99,45 @@ export default async function ArchiveDetailPage({ params }: PageProps) {
           <h1 className="archive-detail-title">{item.title || 'Untitled'}</h1>
 
         {hasKicker ? (
-          <div className="archive-detail-page-kicker !flex-row justify-between items-baseline w-full">
+          <div className="archive-detail-page-kicker">
             {item.artist ? <span>{item.artist}</span> : <span />}
-            {dateLabel ? <span className="text-right whitespace-nowrap ml-4">{dateLabel}</span> : null}
+            {dateLabel ? <span className="archive-detail-date">{dateLabel}</span> : null}
           </div>
         ) : null}
 
         </header>
-
-        <section className="archive-detail-links" aria-label="External Links">
-          {item.appleMusic ? (
-            <a href={item.appleMusic} target="_blank" rel="noreferrer">
-              Apple Music
-            </a>
-          ) : null}
-          {item.spotify ? (
-            <a href={item.spotify} target="_blank" rel="noreferrer">
-              Spotify
-            </a>
-          ) : null}
-          {item.youtubeMusic ? (
-            <a href={item.youtubeMusic} target="_blank" rel="noreferrer">
-              YouTube Music
-            </a>
-          ) : null}
-          {item.link ? (
-            <a href={item.link} target="_blank" rel="noreferrer">
-              Link
-            </a>
-          ) : null}
-        </section>
 
         {imageList.length ? (
           <div className="archive-detail-hero relative">
             <Image src={imageList[0]} alt={item.title || 'Archive image'} fill sizes="(max-width: 768px) 100vw, 48rem" className="object-contain" priority />
           </div>
         ) : null}
+
+        <section className="archive-detail-streaming-bar" aria-label="Streaming Links">
+          <span className="archive-detail-streaming-label">Listen on</span>
+          <div className="archive-detail-streaming-links">
+            {item.appleMusic ? (
+              <a href={item.appleMusic} target="_blank" rel="noreferrer">
+                Apple Music
+              </a>
+            ) : null}
+            {item.spotify ? (
+              <a href={item.spotify} target="_blank" rel="noreferrer">
+                Spotify
+              </a>
+            ) : null}
+            {item.youtubeMusic ? (
+              <a href={item.youtubeMusic} target="_blank" rel="noreferrer">
+                YouTube Music
+              </a>
+            ) : null}
+            {item.link ? (
+              <a href={item.link} target="_blank" rel="noreferrer">
+                Link
+              </a>
+            ) : null}
+          </div>
+        </section>
 
         {imageList.length > 1 ? (
           <div className="archive-detail-gallery" aria-label="Additional images">
@@ -153,7 +156,7 @@ export default async function ArchiveDetailPage({ params }: PageProps) {
         ) : null}
 
         {item.copyright ? (
-          <div className="mt-8 pt-4 border-t border-gray-100/50 text-[0.7rem] text-gray-400">
+          <div className="archive-detail-copyright">
             {item.copyright}
           </div>
         ) : null}
