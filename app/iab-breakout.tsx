@@ -33,7 +33,6 @@ export default function IabBreakout() {
       return;
     }
 
-    // iOS in-app browsers: best-effort attempt to open in default browser
     window.open(url, '_blank');
   }, []);
 

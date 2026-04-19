@@ -37,10 +37,6 @@ export async function GET(request: Request) {
 
     const token = data.access_token;
 
-    // Follows the exact Decap CMS handshake protocol:
-    // 1. Popup sends "authorizing:github" to opener
-    // 2. Opener echoes it back (handshake confirm)
-    // 3. Popup sends "authorization:github:success:{token}" to opener
     const html = `<!DOCTYPE html>
 <html>
 <head><meta charset="utf-8"><title>OAuth Callback</title></head>
@@ -51,10 +47,8 @@ export async function GET(request: Request) {
   var token = "${token}";
   var origin = window.location.origin;
 
-  // Step 1: Send handshake to opener
   window.opener.postMessage("authorizing:" + provider, origin);
 
-  // Step 2: Wait for opener to echo handshake, then send token
   window.addEventListener("message", function(e) {
     if (e.data === "authorizing:" + provider) {
       window.opener.postMessage(

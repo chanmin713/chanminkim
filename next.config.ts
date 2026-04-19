@@ -12,13 +12,12 @@ const nextConfig: NextConfig = {
   async headers() {
     return [
       {
-        source: '/(.*)',
-        headers: [
-          {
-            key: 'Cross-Origin-Opener-Policy',
-            value: 'unsafe-none',
-          },
-        ],
+        source: '/admin/(.*)',
+        headers: [{ key: 'Cross-Origin-Opener-Policy', value: 'unsafe-none' }],
+      },
+      {
+        source: '/api/oauth/(.*)',
+        headers: [{ key: 'Cross-Origin-Opener-Policy', value: 'unsafe-none' }],
       },
     ]
   },

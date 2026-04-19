@@ -109,7 +109,6 @@ function sortArchives(items: ArchiveItem[]) {
 
 export const getArchives = cache(async function getArchives(): Promise<ArchiveItem[]> {
   const data = archiveData as ArchiveDataFile
-  // Filter out demo data: unreleased, or titles/descriptions containing "demo"
   const nonDemoItems = data.items.filter((raw) => {
     const title = String(raw.title || '').toLowerCase()
     const desc = String(raw.description || '').toLowerCase()
