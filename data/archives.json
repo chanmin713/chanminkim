@@ -30,13 +30,13 @@
     },
     {
       "category": "Music",
-      "pinned": true,
+      "pinned": false,
       "id": "",
       "appleMusic": "https://music.apple.com/kr/album/ripple-effect/1064374017"
     },
     {
       "category": "Music",
-      "pinned": false,
+      "pinned": true,
       "id": "",
       "appleMusic": "https://music.apple.com/kr/album/keung/1463936919"
     },
