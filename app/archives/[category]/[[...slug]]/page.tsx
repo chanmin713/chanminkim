@@ -56,8 +56,23 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const item = await getArchiveBySlugPath(buildPath(routeParams))
   if (!item) return { title: 'Archive | Chanmin Kim' }
 
+  const title = `${item.title || 'Archive'} | Archives | Chanmin Kim`
+  const description = item.description || item.artist || 'Chanmin Kim Archives'
+  
   return {
-    title: `${item.title || 'Archive'} | Archives | Chanmin Kim`,
+    title,
+    description,
+    openGraph: {
+      title: item.title || 'Archive',
+      description,
+      images: item.image ? [item.image] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title,
+      description,
+      images: item.image ? [item.image] : undefined,
+    }
   }
 }
 
@@ -75,12 +90,12 @@ export default async function ArchiveDetailPage({ params }: PageProps) {
 
   return (
     <main>
-      <div className="page-shell">
-        <a className="back-link" href={backHref} aria-label="Back to archives">
-          ← Back
-        </a>
-
-        <h1 className="archive-detail-title">{item.title || 'Untitled'}</h1>
+      <article className="page-shell">
+        <header>
+          <a className="back-link" href={backHref} aria-label="Back to archives">
+            ← Back
+          </a>
+          <h1 className="archive-detail-title">{item.title || 'Untitled'}</h1>
 
         {hasKicker ? (
           <div className="archive-detail-page-kicker">
@@ -89,7 +104,9 @@ export default async function ArchiveDetailPage({ params }: PageProps) {
           </div>
         ) : null}
 
-        <div className="archive-detail-links">
+        </header>
+
+        <section className="archive-detail-links" aria-label="External Links">
           {item.appleMusic ? (
             <a href={item.appleMusic} target="_blank" rel="noreferrer">
               Apple Music
@@ -110,7 +127,7 @@ export default async function ArchiveDetailPage({ params }: PageProps) {
               Link
             </a>
           ) : null}
-        </div>
+        </section>
 
         {imageList.length ? (
           <div className="archive-detail-hero relative">
@@ -129,7 +146,7 @@ export default async function ArchiveDetailPage({ params }: PageProps) {
         ) : null}
 
         {item.description ? <p className="archive-detail-description">{renderLinkifiedText(item.description)}</p> : null}
-      </div>
+      </article>
     </main>
   )
 }
