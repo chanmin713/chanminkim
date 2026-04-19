@@ -3,8 +3,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getArchiveBySlugPath, getArchives } from '@/lib/archives'
 import { formatDateLabel } from '@/lib/archive-utils'
-import '../../../../details.css'
-import { TracklistViewer } from './tracklist-viewer'
+import { TracklistViewer } from './TracklistViewer'
 
 type RouteParams = {
   category: string
