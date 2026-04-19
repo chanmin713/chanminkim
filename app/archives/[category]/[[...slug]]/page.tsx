@@ -99,9 +99,9 @@ export default async function ArchiveDetailPage({ params }: PageProps) {
           <h1 className="archive-detail-title">{item.title || 'Untitled'}</h1>
 
         {hasKicker ? (
-          <div className="archive-detail-page-kicker">
-            {item.artist ? <span>{item.artist}</span> : null}
-            {dateLabel ? <span>{dateLabel}</span> : null}
+          <div className="archive-detail-page-kicker !flex-row justify-between items-baseline w-full">
+            {item.artist ? <span>{item.artist}</span> : <span />}
+            {dateLabel ? <span className="text-right whitespace-nowrap ml-4">{dateLabel}</span> : null}
           </div>
         ) : null}
 
