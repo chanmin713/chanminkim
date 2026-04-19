@@ -91,16 +91,17 @@
     flex-wrap: wrap;
     gap: 0.85rem;
     font-size: 0.82rem;
-    color: #666;
+    color: #333;
   }
 
   .archive-detail-streaming-links a {
     text-decoration: underline;
     text-underline-offset: 3px;
+    text-decoration-skip-ink: none;
   }
 
   .archive-detail-tracklist {
-    margin-top: 1.6rem;
+    margin-top: 0.4rem;
     padding-top: 1.2rem;
     border-top: 1px solid rgba(0, 0, 0, 0.05);
   }
