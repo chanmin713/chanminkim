@@ -1,0 +1,54 @@
+# Chanmin Kim
+
+> A pharmacy student and builder wandering in search of something only I can do.
+
+## About
+
+Chanmin Kim is a pharmacy student at Seoul National University (College of Pharmacy, B.S. in Pharmacy, 2024–) and a builder exploring new ideas for future projects and startups.
+
+## Current
+
+- Majoring in Pharmacy at SNU since 2024
+- Building a community for bio experts — Bio Lounge
+- Exploring new ideas for future projects and startups
+
+## Experience
+
+- Bio Lounge — Founder (2026.01–)
+- Esoop Company — Business Development Intern (2026.01–2026.02)
+- GustoVenue — Co-founder (2025.11–2025.12)
+- Pluto — Co-founder & CPO (2025.09–2025.12)
+- CSM17 — Backend Developer (2025.07–2025.08)
+
+## Education
+
+- Seoul National University, College of Pharmacy — B.S. in Pharmacy (2024.03–)
+
+## Organizations
+
+- Medilux (Healthcare Startup Club) — Medical role (2026.03–)
+- SNU Boxing Club (FOS) — Member (2024.03–), Leadership Team (2025.03–2025.12)
+- SNUAI — Vice President (2025.01–2025.12)
+
+## Awards
+
+- Qwen Base SKYST Hackathon by FLock.io — Finalist (2025.11)
+- 19th Gwanak-gu Boxing Association President's Cup — 3rd Place (2025.09)
+- 24th National University Boxing Club Championship — 1st Place (2025.08)
+- KNAPS Startup Project Competition — 2nd Place (2025.07)
+- 23rd National University Boxing Club Championship — 3rd Place (2024.08)
+- Gyeonggi Provincial Council Chairperson's Commendation (2023.12)
+
+## Site Structure
+
+- / — Homepage with bio, experience, education, organizations, and awards
+- /archives — Personal archives (Music, Photo, Scrap, Thoughts, Works)
+- /experience/* — Detailed experience pages
+- /awards/* — Detailed award pages
+
+## Contact
+
+- Email: chanmin713@snu.ac.kr
+- LinkedIn: https://www.linkedin.com/in/chanmin-kim/
+- GitHub: https://github.com/chanmin713
+- X: https://x.com/chanminkimkr

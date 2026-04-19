@@ -1,0 +1,239 @@
+backend:
+  name: github
+  repo: chanmin713/chanminkim
+  branch: main
+  base_url: https://chanminkim.com
+  auth_endpoint: api/oauth/auth
+
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: archiveFolders
+    label: 'Folders'
+    files:
+      - file: data/archive-folders.json
+        label: Folder Tree
+        name: folderTree
+        fields:
+          - label: Folders
+            name: folders
+            widget: list
+            label_singular: Folder
+            add_to_top: true
+            collapsed: true
+            minimize_collapsed: true
+            summary: '{{fields.name}} · {{fields.category}}'
+            fields:
+              - { label: Category, name: category, widget: select, required: true, options: [Music, Photo, Scrap, Thoughts, Works] }
+              - { label: Name, name: name, widget: string, hint: 'Shown in UI (e.g. APRIL 2026 PICKS)' }
+              - label: Parent Folder
+                name: parentId
+                widget: relation
+                collection: archiveFolders
+                file: folderTree
+                search_fields: ['folders.*.name', 'folders.*.id']
+                value_field: 'folders.*.id'
+                display_fields: ['folders.*.name', 'folders.*.id']
+                required: false
+                hint: 'Optional: choose parent for nested folder structure.'
+              - { label: Pinned, name: pinned, widget: boolean, default: false, hint: 'Pinned folders appear first.' }
+              - label: ID
+                name: id
+                widget: hidden
+                required: false
+                default: ''
+
+  - name: archives
+    label: 'Items'
+    files:
+      - file: data/archives.json
+        label: Archive Items
+        name: archiveItems
+        fields:
+          - label: Items
+            name: items
+            widget: list
+            label_singular: Item
+            add_to_top: true
+            collapsed: true
+            minimize_collapsed: true
+            summary: '{{fields.title}} · {{type}}'
+            typeKey: category
+            types:
+              - label: 'Music'
+                name: 'Music'
+                widget: object
+                fields:
+                  - label: Folder
+                    name: folderId
+                    widget: relation
+                    collection: archiveFolders
+                    file: folderTree
+                    search_fields: ['folders.*.name', 'folders.*.id']
+                    value_field: 'folders.*.id'
+                    display_fields: ['folders.*.name', 'folders.*.id']
+                    required: false
+                  - { label: Date, name: date, widget: datetime, required: false, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+                  - { label: Apple Music, name: appleMusic, widget: string, required: false, pattern: ['^https?://.+$', 'Enter a full URL'] }
+                  - { label: Spotify, name: spotify, widget: string, required: false, pattern: ['^https?://.+$', 'Enter a full URL'] }
+                  - { label: YouTube Music, name: youtubeMusic, widget: string, required: false, pattern: ['^https?://.+$', 'Enter a full URL'] }
+                  - { label: Memo, name: description, widget: text, required: false }
+                  - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
+                  - { label: ID, name: id, widget: hidden, required: false, default: '' }
+
+              - label: 'Music (unreleased)'
+                name: 'Music (unreleased)'
+                widget: object
+                fields:
+                  - label: Folder
+                    name: folderId
+                    widget: relation
+                    collection: archiveFolders
+                    file: folderTree
+                    search_fields: ['folders.*.name', 'folders.*.id']
+                    value_field: 'folders.*.id'
+                    display_fields: ['folders.*.name', 'folders.*.id']
+                    required: false
+                  - { label: Title, name: title, widget: string, required: false }
+                  - { label: Date, name: date, widget: datetime, required: false, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+                  - { label: Artist, name: artist, widget: string, required: false }
+                  - { label: Unreleased, name: unreleased, widget: boolean, required: false, default: false }
+                  - label: Images
+                    name: images
+                    widget: list
+                    required: false
+                    collapsed: true
+                    field:
+                      label: Image
+                      name: images
+                      widget: image
+                      required: false
+                      pattern: ['.*\\.(webp|WEBP)$', 'Image must be a .webp file']
+                  - { label: Apple Music, name: appleMusic, widget: string, required: false, pattern: ['^https?://.+$', 'Enter a full URL'] }
+                  - { label: Spotify, name: spotify, widget: string, required: false, pattern: ['^https?://.+$', 'Enter a full URL'] }
+                  - { label: YouTube Music, name: youtubeMusic, widget: string, required: false, pattern: ['^https?://.+$', 'Enter a full URL'] }
+                  - { label: Memo, name: description, widget: text, required: false }
+                  - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
+                  - { label: ID, name: id, widget: hidden, required: false, default: '' }
+
+              - label: 'Photo'
+                name: 'Photo'
+                widget: object
+                fields:
+                  - label: Folder
+                    name: folderId
+                    widget: relation
+                    collection: archiveFolders
+                    file: folderTree
+                    search_fields: ['folders.*.name', 'folders.*.id']
+                    value_field: 'folders.*.id'
+                    display_fields: ['folders.*.name', 'folders.*.id']
+                    required: false
+                  - { label: Date, name: date, widget: datetime, required: false, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+                  - label: Images
+                    name: images
+                    widget: list
+                    required: false
+                    collapsed: true
+                    field:
+                      label: Image
+                      name: images
+                      widget: image
+                      required: false
+                      pattern: ['.*\\.(webp|WEBP)$', 'Image must be a .webp file']
+                  - { label: Memo, name: description, widget: text, required: false }
+                  - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
+                  - { label: ID, name: id, widget: hidden, required: false, default: '' }
+
+              - label: 'Scrap'
+                name: 'Scrap'
+                widget: object
+                fields:
+                  - label: Folder
+                    name: folderId
+                    widget: relation
+                    collection: archiveFolders
+                    file: folderTree
+                    search_fields: ['folders.*.name', 'folders.*.id']
+                    value_field: 'folders.*.id'
+                    display_fields: ['folders.*.name', 'folders.*.id']
+                    required: false
+                  - { label: Title, name: title, widget: string, required: false }
+                  - { label: Link, name: link, widget: string, required: false, pattern: ['^https?://.+$', 'Enter a full URL'] }
+                  - { label: Date, name: date, widget: datetime, required: false, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+                  - label: Images
+                    name: images
+                    widget: list
+                    required: false
+                    collapsed: true
+                    field:
+                      label: Image
+                      name: images
+                      widget: image
+                      required: false
+                      pattern: ['.*\\.(webp|WEBP)$', 'Image must be a .webp file']
+                  - { label: Memo, name: description, widget: text, required: false }
+                  - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
+                  - { label: ID, name: id, widget: hidden, required: false, default: '' }
+
+              - label: 'Thoughts'
+                name: 'Thoughts'
+                widget: object
+                fields:
+                  - label: Folder
+                    name: folderId
+                    widget: relation
+                    collection: archiveFolders
+                    file: folderTree
+                    search_fields: ['folders.*.name', 'folders.*.id']
+                    value_field: 'folders.*.id'
+                    display_fields: ['folders.*.name', 'folders.*.id']
+                    required: false
+                  - { label: Title, name: title, widget: string, required: false }
+                  - { label: Date, name: date, widget: datetime, required: false, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+                  - label: Images
+                    name: images
+                    widget: list
+                    required: false
+                    collapsed: true
+                    field:
+                      label: Image
+                      name: images
+                      widget: image
+                      required: false
+                      pattern: ['.*\\.(webp|WEBP)$', 'Image must be a .webp file']
+                  - { label: Memo, name: description, widget: text, required: false }
+                  - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
+                  - { label: ID, name: id, widget: hidden, required: false, default: '' }
+
+              - label: 'Works'
+                name: 'Works'
+                widget: object
+                fields:
+                  - label: Folder
+                    name: folderId
+                    widget: relation
+                    collection: archiveFolders
+                    file: folderTree
+                    search_fields: ['folders.*.name', 'folders.*.id']
+                    value_field: 'folders.*.id'
+                    display_fields: ['folders.*.name', 'folders.*.id']
+                    required: false
+                  - { label: Title, name: title, widget: string, required: false }
+                  - { label: Link, name: link, widget: string, required: false, pattern: ['^https?://.+$', 'Enter a full URL'] }
+                  - { label: Date, name: date, widget: datetime, required: false, date_format: YYYY-MM-DD, time_format: false, format: YYYY-MM-DD }
+                  - label: Images
+                    name: images
+                    widget: list
+                    required: false
+                    collapsed: true
+                    field:
+                      label: Image
+                      name: images
+                      widget: image
+                      required: false
+                      pattern: ['.*\\.(webp|WEBP)$', 'Image must be a .webp file']
+                  - { label: Memo, name: description, widget: text, required: false }
+                  - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
+                  - { label: ID, name: id, widget: hidden, required: false, default: '' }
