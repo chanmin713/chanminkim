@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import './archives.css'
 import ArchivesClient from './archives-client'
 import { getArchiveFolders, getArchives } from '@/lib/archives'
 

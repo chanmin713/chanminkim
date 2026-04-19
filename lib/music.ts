@@ -17,7 +17,6 @@ type ITunesLookupResult = {
 }
 
 type ITunesLookupResponse = {
-  resultCount?: number
   results?: ITunesLookupResult[]
 }
 

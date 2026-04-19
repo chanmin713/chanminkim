@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import './archives.css'
 import { getArchives } from '@/lib/archives'
 import { timeValue } from '@/lib/archive-utils'
 
