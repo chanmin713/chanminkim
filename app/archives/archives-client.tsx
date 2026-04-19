@@ -129,19 +129,21 @@ function ArchiveCard({
         </div>
 
         <div className="archive-card-copy">
-          {(displayTitle || item.pinned) ? (
+          {(displayTitle || item.pinned || item.artist) ? (
             <div className="archive-card-title justify-between">
               <div className="archive-card-title-row">
                 {item.pinned ? <PinIcon className="archive-pin-icon flex-shrink-0" /> : null}
-                <div className="title-container flex-1">
-                  {displayTitle ? <span className="marquee-text">{displayTitle}</span> : null}
+                <div className="title-container flex-1 min-w-0">
+                  <span className="marquee-text">
+                    {displayTitle ? displayTitle : null}
+                    {item.category === 'Music' && item.artist ? (
+                      <span className="archive-card-artist whitespace-pre">
+                        {displayTitle ? ' - ' : ''}{item.artist}
+                      </span>
+                    ) : null}
+                  </span>
                 </div>
               </div>
-              {item.category === 'Music' && item.artist ? (
-                <span className="archive-card-artist">
-                  - {item.artist}
-                </span>
-              ) : null}
             </div>
           ) : null}
         </div>

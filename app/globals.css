@@ -340,9 +340,6 @@
   .archive-card-artist {
     font-size: 0.95rem;
     color: #666;
-    flex-shrink: 0;
-    margin-left: 0.75rem;
-    text-align: right;
   }
 
   .title-container {
