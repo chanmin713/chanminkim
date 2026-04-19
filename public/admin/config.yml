@@ -40,9 +40,8 @@ collections:
               - { label: Pinned, name: pinned, widget: boolean, default: false, hint: 'Pinned folders appear first.' }
               - label: ID
                 name: id
-                widget: hidden
+                widget: uuid
                 required: false
-                default: ''
 
   - name: archives
     label: 'Items'
@@ -80,7 +79,7 @@ collections:
                   - { label: YouTube Music, name: youtubeMusic, widget: string, required: false, pattern: ['^https?://.+$', 'Enter a full URL'] }
                   - { label: Memo, name: description, widget: text, required: false }
                   - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
-                  - { label: ID, name: id, widget: hidden, required: false, default: '' }
+                  - { label: ID, name: id, widget: uuid, required: false }
 
               - label: 'Music (unreleased)'
                 name: 'Music (unreleased)'
@@ -115,7 +114,7 @@ collections:
                   - { label: YouTube Music, name: youtubeMusic, widget: string, required: false, pattern: ['^https?://.+$', 'Enter a full URL'] }
                   - { label: Memo, name: description, widget: text, required: false }
                   - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
-                  - { label: ID, name: id, widget: hidden, required: false, default: '' }
+                  - { label: ID, name: id, widget: uuid, required: false }
 
               - label: 'Photo'
                 name: 'Photo'
@@ -144,7 +143,7 @@ collections:
                       pattern: ['.*\\.(webp|WEBP)$', 'Image must be a .webp file']
                   - { label: Memo, name: description, widget: text, required: false }
                   - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
-                  - { label: ID, name: id, widget: hidden, required: false, default: '' }
+                  - { label: ID, name: id, widget: uuid, required: false }
 
               - label: 'Scrap'
                 name: 'Scrap'
@@ -175,7 +174,7 @@ collections:
                       pattern: ['.*\\.(webp|WEBP)$', 'Image must be a .webp file']
                   - { label: Memo, name: description, widget: text, required: false }
                   - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
-                  - { label: ID, name: id, widget: hidden, required: false, default: '' }
+                  - { label: ID, name: id, widget: uuid, required: false }
 
               - label: 'Thoughts'
                 name: 'Thoughts'
@@ -205,7 +204,7 @@ collections:
                       pattern: ['.*\\.(webp|WEBP)$', 'Image must be a .webp file']
                   - { label: Memo, name: description, widget: text, required: false }
                   - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
-                  - { label: ID, name: id, widget: hidden, required: false, default: '' }
+                  - { label: ID, name: id, widget: uuid, required: false }
 
               - label: 'Works'
                 name: 'Works'
@@ -236,4 +235,4 @@ collections:
                       pattern: ['.*\\.(webp|WEBP)$', 'Image must be a .webp file']
                   - { label: Memo, name: description, widget: text, required: false }
                   - { label: Pinned, name: pinned, widget: boolean, required: false, default: false }
-                  - { label: ID, name: id, widget: hidden, required: false, default: '' }
+                  - { label: ID, name: id, widget: uuid, required: false }

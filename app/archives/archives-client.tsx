@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useEffect, useMemo } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import type { ArchiveFolder, ArchiveItem } from '@/lib/archives'
+import { timeValue } from '@/lib/archive-utils'
 
 type ArchiveFolderNode = ArchiveFolder & {
   children: ArchiveFolderNode[]
@@ -55,6 +56,22 @@ function buildFolderTree(folders: ArchiveFolder[], items: ArchiveItem[]) {
     byId: mapped,
     parentById,
   }
+}
+
+function getFolderLatestDate(folder: ArchiveFolderNode): number {
+  let maxTime = Number.NEGATIVE_INFINITY
+  
+  if (folder.items && folder.items.length > 0) {
+    const itemTimes = folder.items.map(item => timeValue(item.date))
+    maxTime = Math.max(...itemTimes)
+  }
+  
+  if (folder.children && folder.children.length > 0) {
+    const childTimes = folder.children.map(child => getFolderLatestDate(child))
+    maxTime = Math.max(maxTime, ...childTimes)
+  }
+  
+  return maxTime
 }
 
 function PinIcon({ className }: { className?: string }) {
@@ -282,9 +299,24 @@ export default function ArchivesClient({
   }, [currentFolder, folderTree, selectedCategoryLabel])
 
   const gridEntries = [
-    ...visibleFolders.map((folder) => ({ kind: 'folder' as const, folder, key: `folder-${folder.id}` })),
-    ...visibleItems.map((item) => ({ kind: 'item' as const, item, key: `item-${item.id}` })),
-  ]
+    ...visibleFolders.map((folder, i) => ({ kind: 'folder' as const, folder, key: `folder-${folder.id}`, index: i })),
+    ...visibleItems.map((item, i) => ({ kind: 'item' as const, item, key: `item-${item.id}`, index: visibleFolders.length + i })),
+  ].sort((a, b) => {
+    const aPinned = a.kind === 'folder' ? a.folder.pinned : a.item.pinned
+    const bPinned = b.kind === 'folder' ? b.folder.pinned : b.item.pinned
+    
+    if (aPinned !== bPinned) return aPinned ? -1 : 1
+
+    const aTime = a.kind === 'folder' ? getFolderLatestDate(a.folder) : timeValue(a.item.date)
+    const bTime = b.kind === 'folder' ? getFolderLatestDate(b.folder) : timeValue(b.item.date)
+
+    if (aTime !== bTime) {
+      return bTime - aTime
+    }
+
+    if (a.kind !== b.kind) return a.kind === 'folder' ? -1 : 1
+    return a.index - b.index
+  })
 
   return (
     <div>
