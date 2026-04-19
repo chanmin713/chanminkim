@@ -1,188 +1,18 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useMemo } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import type { ArchiveFolder, ArchiveItem } from '@/lib/archives'
 import { timeValue } from '@/lib/archive-utils'
 
-type ArchiveFolderNode = ArchiveFolder & {
-  children: ArchiveFolderNode[]
-  items: ArchiveItem[]
-}
-
-function normalize(value: string | null | undefined) {
-  return (value || '').trim().toLowerCase()
-}
-
-function safeCategoryLabel(category?: string) {
-  const normalized = (category || '').trim()
-  return normalized || 'Archive'
-}
-
-function safeTitle(value?: string) {
-  const normalized = (value || '').trim()
-  return normalized || 'Untitled'
-}
-
-function buildFolderTree(folders: ArchiveFolder[], items: ArchiveItem[]) {
-  const mapped = new Map<string, ArchiveFolderNode>()
-  const parentById = new Map<string, string>()
-
-  for (const folder of folders) {
-    mapped.set(folder.id, { ...folder, children: [], items: [] })
-  }
-
-  const roots: ArchiveFolderNode[] = []
-
-  for (const folder of mapped.values()) {
-    const parent = folder.parentId ? mapped.get(folder.parentId) : null
-    if (parent) {
-      parent.children.push(folder)
-      parentById.set(folder.id, parent.id)
-    }
-    else roots.push(folder)
-  }
-
-  for (const item of items) {
-    if (item.folderId && mapped.has(item.folderId)) {
-      mapped.get(item.folderId)?.items.push(item)
-    }
-  }
-
-  return {
-    roots,
-    byId: mapped,
-    parentById,
-  }
-}
-
-function getFolderLatestDate(folder: ArchiveFolderNode): number {
-  let maxTime = Number.NEGATIVE_INFINITY
-  
-  if (folder.items && folder.items.length > 0) {
-    const itemTimes = folder.items.map(item => timeValue(item.date))
-    maxTime = Math.max(...itemTimes)
-  }
-  
-  if (folder.children && folder.children.length > 0) {
-    const childTimes = folder.children.map(child => getFolderLatestDate(child))
-    maxTime = Math.max(maxTime, ...childTimes)
-  }
-  
-  return maxTime
-}
-
-function PinIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="square" strokeLinejoin="miter">
-      <path d="M12 17v5" />
-      <path d="M9 10.5V7a3 3 0 0 1 6 0v3.5l2 4.5H7l2-4.5z" />
-    </svg>
-  )
-}
-
-function ArchiveCard({
-  item,
-  showCategory,
-}: {
-  item: ArchiveItem
-  showCategory: boolean
-}) {
-  const href = item.slugPath ? `/archives/${item.slugPath}` : '/archives'
-  const imageList = item.images?.length
-    ? item.images
-    : (item.image ? [item.image] : [])
-  const primaryImage = imageList[0]
-  const hasMultipleImages = imageList.length > 1
-  
-  const displayTitle = item.category === 'Photo' && item.date 
-    ? '' 
-    : safeTitle(item.title)
-
-  return (
-    <Link href={href} className="archive-card-link" aria-label={`Open ${displayTitle || 'item'}`}>
-      <article className="archive-card">
-        <div className="flex flex-col gap-1">
-          {showCategory ? <div className="archive-card-kicker">{safeCategoryLabel(item.category)}</div> : null}
-          
-          {primaryImage ? (
-            <div className={`archive-card-media relative ${hasMultipleImages ? 'archive-card-media-multi' : ''}`}>
-              {hasMultipleImages ? (
-                <div className="archive-card-media-stack" aria-hidden="true">
-                  {imageList.slice(0, 3).map((src, index) => (
-                    <div key={`${item.id}-stack-${src}-${index}`} className={`archive-card-media-stack-layer archive-card-media-stack-layer-${index + 1}`}>
-                      <Image src={src} alt="" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <Image src={primaryImage} alt={displayTitle || 'Archive image'} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" />
-              )}
-            </div>
-          ) : (
-            <div className="archive-card-media archive-card-media-placeholder" aria-hidden="true">
-              <span>No image</span>
-            </div>
-          )}
-        </div>
-
-        <div className="archive-card-copy">
-          {(displayTitle || item.pinned || item.artist) ? (
-            <div className="archive-card-title justify-between">
-              <div className="archive-card-title-row">
-                {item.pinned ? <PinIcon className="archive-pin-icon flex-shrink-0" /> : null}
-                <div className="title-container flex-1 min-w-0">
-                  <span className="marquee-text">
-                    {displayTitle ? displayTitle : null}
-                    {item.category === 'Music' && item.artist ? (
-                      <span className="archive-card-artist whitespace-pre">
-                        {displayTitle ? ' - ' : ''}{item.artist}
-                      </span>
-                    ) : null}
-                  </span>
-                </div>
-              </div>
-            </div>
-          ) : null}
-        </div>
-      </article>
-    </Link>
-  )
-}
-
-function FolderCard({
-  folder,
-  onOpen,
-  showCategory,
-}: {
-  folder: ArchiveFolderNode
-  onOpen: (folderId: string) => void
-  showCategory: boolean
-}) {
-  return (
-    <button type="button" className="archive-folder-card archive-card-link" onClick={() => onOpen(folder.id)}>
-      <article className="archive-card">
-        <div className="flex flex-col gap-1">
-          {showCategory ? <div className="archive-card-kicker">{safeCategoryLabel(folder.category)}</div> : null}
-          <div className="archive-card-media archive-folder-media" aria-hidden="true">
-            <img className="archive-folder-media-icon" src="/folder.webp" alt="" />
-          </div>
-        </div>
-
-        <div className="archive-card-copy">
-          <div className="archive-card-title">
-            <div className="archive-card-title-row">
-              {folder.pinned ? <PinIcon className="archive-pin-icon flex-shrink-0" /> : null}
-              <span>{folder.name}</span>
-            </div>
-          </div>
-        </div>
-      </article>
-    </button>
-  )
-}
+import { 
+  normalize, 
+  buildFolderTree, 
+  getFolderLatestDate 
+} from './utils/folder-utils'
+import { ArchiveCard } from './components/ArchiveCard'
+import { FolderCard } from './components/FolderCard'
 
 export default function ArchivesClient({
   items,
@@ -358,9 +188,18 @@ export default function ArchivesClient({
               <div className="archive-group-list">
                 {gridEntries.map((entry) =>
                   entry.kind === 'folder' ? (
-                    <FolderCard key={entry.key} folder={entry.folder} onOpen={openFolder} showCategory={showCategory} />
+                    <FolderCard 
+                      key={entry.key} 
+                      folder={entry.folder} 
+                      onOpen={openFolder} 
+                      showCategory={showCategory} 
+                    />
                   ) : (
-                    <ArchiveCard key={entry.key} item={entry.item} showCategory={showCategory} />
+                    <ArchiveCard 
+                      key={entry.key} 
+                      item={entry.item} 
+                      showCategory={showCategory} 
+                    />
                   ),
                 )}
               </div>

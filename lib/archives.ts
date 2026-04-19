@@ -3,48 +3,16 @@ import archiveData from '@/data/archives.json'
 import folderData from '@/data/archive-folders.json'
 import { hydrateMusicItem } from './music'
 import { hydrateScrapItem } from './og'
-import { timeValue } from './archive-utils'
+import { ArchiveItem, ArchiveFolder } from './archive-types'
+import { 
+  timeValue, 
+  slugify, 
+  buildItemId, 
+  buildFolderId, 
+  buildItemSlugPath 
+} from './archive-utils'
 
-export type ArchiveTrack = {
-  id: string
-  title: string
-  artist: string
-  durationMillis: number
-  previewUrl: string
-  trackNumber: number
-}
-
-export type ArchiveItem = {
-  id: string
-  title: string
-  date?: string
-  category: string
-  folderId?: string | null
-  pinned: boolean
-  image?: string
-  images?: string[]
-  description?: string
-  link?: string
-  artist?: string
-  appleMusic?: string
-  spotify?: string
-  youtubeMusic?: string
-  trackCount?: number
-  copyright?: string
-  tracks?: ArchiveTrack[]
-  metadataMode?: 'manual' | 'apple-auto'
-  linkMode?: 'manual' | 'songlink-auto'
-  unreleased?: boolean
-  slugPath?: string
-}
-
-export type ArchiveFolder = {
-  id: string
-  name: string
-  parentId?: string | null
-  category: string
-  pinned?: boolean
-}
+export type { ArchiveTrack, ArchiveItem, ArchiveFolder } from './archive-types'
 
 type ArchiveDataFile = {
   items: Array<Partial<ArchiveItem>>
@@ -52,64 +20,6 @@ type ArchiveDataFile = {
 
 type ArchiveFolderFile = {
   folders: Array<Partial<ArchiveFolder>>
-}
-
-function slugify(value: string) {
-  return value
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/(^-|-$)/g, '')
-}
-
-function buildItemId(raw: Partial<ArchiveItem>, index: number, seen: Map<string, number>) {
-  const direct = slugify(raw.id || '')
-  if (direct) return direct
-
-  const base = slugify([raw.category, raw.title, raw.date].filter(Boolean).join('-')) || `archive-item-${index + 1}`
-  const count = (seen.get(base) || 0) + 1
-  seen.set(base, count)
-
-  return count === 1 ? base : `${base}-${count}`
-}
-
-function buildFolderId(raw: Partial<ArchiveFolder>, index: number, seen: Map<string, number>) {
-  const direct = slugify(raw.id || '')
-  if (direct) return direct
-
-  const base = slugify([raw.category, raw.name].filter(Boolean).join('-')) || `archive-folder-${index + 1}`
-  
-  const count = (seen.get(base) || 0) + 1
-  seen.set(base, count)
-
-  return count === 1 ? base : `${base}-${count}`
-}
-
-function buildFolderAncestors(folderId: string | null | undefined, foldersById: Map<string, ArchiveFolder>) {
-  const segments: string[] = []
-  const seen = new Set<string>()
-
-  if (folderId && !foldersById.has(folderId)) return segments
-
-  let current = folderId ? foldersById.get(folderId) : undefined
-
-  while (current && !seen.has(current.id)) {
-    seen.add(current.id)
-    const segment = slugify(current.name || current.id)
-    if (segment) segments.unshift(segment)
-    if (current.parentId && !foldersById.has(current.parentId)) break
-    current = current.parentId ? foldersById.get(current.parentId) : undefined
-  }
-
-  return segments
-}
-
-function buildItemSlugPath(item: ArchiveItem, foldersById: Map<string, ArchiveFolder>) {
-  const category = slugify(item.category || 'archive') || 'archive'
-  const folderSegments = buildFolderAncestors(item.folderId, foldersById)
-  const titleSegment = slugify(item.title || item.id || 'item') || 'item'
-
-  return [category, ...folderSegments, titleSegment].join('/')
 }
 
 function sortArchives(items: ArchiveItem[]) {
