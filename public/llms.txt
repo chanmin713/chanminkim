@@ -42,7 +42,6 @@ Chanmin Kim is a pharmacy student at Seoul National University (College of Pharm
 ## Site Structure
 
 - / — Homepage with bio, experience, education, organizations, and awards
-- /archives — Personal archives (Music, Photo, Scrap, Thoughts, Works)
 - /experience/* — Detailed experience pages
 - /awards/* — Detailed award pages
 

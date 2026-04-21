@@ -1,12 +1,4 @@
-import Image from 'next/image'
-import { getArchives } from '@/lib/archives'
-import { timeValue } from '@/lib/archive-utils'
-
-export default async function Home() {
-  const latestArchiveItems = (await getArchives())
-    .sort((a, b) => timeValue(b.date) - timeValue(a.date))
-    .slice(0, 6)
-
+export default function Home() {
   return (
     <main>
       <div className="page-shell">
@@ -68,59 +60,6 @@ export default async function Home() {
           <p className="bullet-item"><span className="bullet-mark">•</span><span>23rd National University Boxing Club Championship — 3rd Place <span className="nowrap">(2024.08)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span>Gyeonggi Provincial Council Chairperson’s Commendation <span className="nowrap">(2023.12)</span></span></p>
         </div>
-        <h2>Archives</h2>
-        <div className="home-archives-list">
-          {latestArchiveItems.length ? (
-            <section className="archive-group">
-              <div className="archive-group-list">
-                {latestArchiveItems.map((item) => {
-                  const href = item.slugPath ? `/archives/${item.slugPath}` : '/archives'
-                  const title = (item.title || '').trim() || 'Untitled'
-                  const categoryLabel = (item.category || 'Archive').trim() || 'Archive'
-                  const imageList = item.images?.length ? item.images : (item.image ? [item.image] : [])
-                  const primaryImage = imageList[0]
-                  const hasMultipleImages = imageList.length > 1
-
-                  return (
-                    <a key={item.id} href={href} className="archive-card-link" aria-label={`Open ${title}`}>
-                      <article className="archive-card">
-                        <div className="flex flex-col gap-1">
-                          <div className="archive-card-kicker">{categoryLabel}</div>
-                          {primaryImage ? (
-                            <div className={`archive-card-media relative ${hasMultipleImages ? 'archive-card-media-multi' : ''}`}>
-                              {hasMultipleImages ? (
-                                <div className="archive-card-media-stack" aria-hidden="true">
-                                  {imageList.slice(0, 3).map((src, index) => (
-                                    <div key={`${item.id}-home-stack-${src}-${index}`} className={`archive-card-media-stack-layer archive-card-media-stack-layer-${index + 1}`}>
-                                      <Image src={src} alt="" fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" priority />
-                                    </div>
-                                  ))}
-                                </div>
-                              ) : (
-                                <Image src={primaryImage} alt={title} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" className="object-cover" priority />
-                              )}
-                            </div>
-                          ) : (
-                            <div className="archive-card-media archive-card-media-placeholder" aria-hidden="true">
-                              <span>No Image</span>
-                            </div>
-                          )}
-                        </div>
-
-                        <div className="archive-card-copy">
-                          <div className="archive-card-title">
-                            <span>{title}</span>
-                          </div>
-                        </div>
-                      </article>
-                    </a>
-                  )
-                })}
-              </div>
-            </section>
-          ) : null}
-        </div>
-        <a className="view-all-link home-archives-view-all" href="/archives">View all →</a>
       </div>
     </main>
   )
