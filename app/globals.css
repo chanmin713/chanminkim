@@ -15,6 +15,8 @@ body {
   color: #0a0a0a;
   line-height: 2;
   font-family: "Times New Roman", Times, serif;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 main {
@@ -39,6 +41,8 @@ a {
   color: inherit;
   text-decoration-line: underline;
   text-underline-offset: 4px;
+  text-decoration-thickness: 1px;
+  text-decoration-skip-ink: auto;
 }
 
 a:hover {
@@ -120,6 +124,17 @@ button {
 
 .bio-text,
 .contact-row,
+.detail-summary,
+.detail-section p,
+.bullet-item span:last-child,
+h1,
+h2 {
+  text-wrap: pretty;
+  overflow-wrap: anywhere;
+}
+
+.bio-text,
+.contact-row,
 .bullet-item {
   font-size: 1rem;
   line-height: 1.5;
@@ -164,12 +179,83 @@ button {
 }
 
 @media (max-width: 767px) {
+  .page-shell {
+    width: calc(100% - 2rem);
+    padding: 1.75rem 0 3rem;
+  }
+
+  h1 {
+    font-size: 1.625rem;
+    line-height: 1.3;
+  }
+
+  h2 {
+    margin-top: 1.75rem;
+    font-size: 1.2rem;
+    line-height: 1.45;
+  }
+
+  .bio-text,
+  .contact-row,
+  .bullet-item,
+  .detail-meta,
+  .detail-section p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+  .contact-row {
+    margin-top: 0.5rem;
+  }
+
+  .back-link {
+    margin-bottom: 1.25rem;
+    padding: 0.125rem 0;
+  }
+
+  .detail-page {
+    padding-top: 1.25rem;
+  }
+
   .detail-header {
     margin-bottom: 2rem;
     padding-bottom: 1.5rem;
   }
 
+  .detail-category {
+    margin-bottom: 0.625rem;
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+  }
+
+  .detail-meta {
+    margin-top: 0.875rem;
+  }
+
   .detail-summary {
+    margin-top: 0.875rem;
     font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .detail-body {
+    gap: 1.5rem;
+  }
+
+  .detail-section .bullet-section {
+    margin-top: 0.5rem;
+  }
+
+  .bullet-item {
+    gap: 0.4rem;
+    margin: 0.35rem 0 0.75rem;
+  }
+
+  .bullet-mark {
+    line-height: 1.65;
+  }
+
+  .nowrap {
+    white-space: normal;
   }
 }
