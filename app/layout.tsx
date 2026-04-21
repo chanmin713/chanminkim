@@ -1,7 +1,5 @@
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import IabBreakout from './iab-breakout'
 
@@ -23,8 +21,6 @@ export default function RootLayout({
       <body>
         <IabBreakout />
         {children}
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   )

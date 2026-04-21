@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function Home() {
   return (
     <main>
@@ -32,11 +34,11 @@ export default function Home() {
 
         <h2>Experience</h2>
         <div className="bullet-section">
-          <p className="bullet-item"><span className="bullet-mark">•</span><span><a href="/experience/bio-lounge">Bio Lounge</a> — Founder <span className="nowrap">(2026.01 – )</span></span></p>
-          <p className="bullet-item"><span className="bullet-mark">•</span><span><a href="/experience/esoop">Esoop Company</a> — Business Development Intern <span className="nowrap">(2026.01 – 2026.02)</span></span></p>
-          <p className="bullet-item"><span className="bullet-mark">•</span><span><a href="/experience/gustovenue">GustoVenue</a> — Co-founder <span className="nowrap">(2025.11 – 2025.12)</span></span></p>
-          <p className="bullet-item"><span className="bullet-mark">•</span><span><a href="/experience/pluto">Pluto</a> — Co-founder &amp; CPO <span className="nowrap">(2025.09 – 2025.12)</span></span></p>
-          <p className="bullet-item"><span className="bullet-mark">•</span><span><a href="/experience/csm17">CSM17</a> — Backend Developer <span className="nowrap">(2025.07 – 2025.08)</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/bio-lounge">Bio Lounge</Link> — Founder <span className="nowrap">(2026.01 – )</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/esoop">Esoop Company</Link> — Business Development Intern <span className="nowrap">(2026.01 – 2026.02)</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/gustovenue">GustoVenue</Link> — Co-founder <span className="nowrap">(2025.11 – 2025.12)</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/pluto">Pluto</Link> — Co-founder &amp; CPO <span className="nowrap">(2025.09 – 2025.12)</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/csm17">CSM17</Link> — Backend Developer <span className="nowrap">(2025.07 – 2025.08)</span></span></p>
         </div>
 
         <h2>Education</h2>
@@ -53,10 +55,10 @@ export default function Home() {
 
         <h2>Awards</h2>
         <div className="bullet-section">
-          <p className="bullet-item"><span className="bullet-mark">•</span><span><a href="/awards/qwen-base-skyst-finalist">Qwen Base SKYST Hackathon by FLock.io</a> — Finalist <span className="nowrap">(2025.11)</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/awards/qwen-base-skyst-finalist">Qwen Base SKYST Hackathon by FLock.io</Link> — Finalist <span className="nowrap">(2025.11)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span>19th Gwanak-gu Boxing Association President's Cup — 3rd Place <span className="nowrap">(2025.09)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span>24th National University Boxing Club Championship — 1st Place <span className="nowrap">(2025.08)</span></span></p>
-          <p className="bullet-item"><span className="bullet-mark">•</span><span><a href="/awards/kaps-startup-competition">KNAPS Startup Project Competition</a> — 2nd Place <span className="nowrap">(2025.07)</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/awards/kaps-startup-competition">KNAPS Startup Project Competition</Link> — 2nd Place <span className="nowrap">(2025.07)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span>23rd National University Boxing Club Championship — 3rd Place <span className="nowrap">(2024.08)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span>Gyeonggi Provincial Council Chairperson’s Commendation <span className="nowrap">(2023.12)</span></span></p>
         </div>
