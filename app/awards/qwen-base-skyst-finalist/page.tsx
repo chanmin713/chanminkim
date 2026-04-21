@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <DetailPage
-      category="Award"
+      category="Awards"
       meta="Finalist · 2025.11"
       summary="Reached the final round with BaseQ, an AI conversational survey platform."
       title="Qwen Base SKYST Hackathon by FLock.io"

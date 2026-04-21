@@ -59,15 +59,15 @@ button {
 }
 
 .page-shell {
-  width: min(48rem, calc(100% - 3rem));
+  max-width: 44rem;
   margin: 0 auto;
-  padding: 2.5rem 0 5rem;
+  padding: 2.75rem 1.5rem 5rem;
   text-align: left;
 }
 
 @media (min-width: 768px) {
   .page-shell {
-    width: min(48rem, calc(100% - 6rem));
+    padding: 3.5rem 2.75rem 6rem;
   }
 }
 
@@ -96,12 +96,9 @@ button {
 
 .detail-meta {
   margin: 1rem 0 0;
-  font-size: 1rem;
-  line-height: 1.5;
 }
 
 .detail-summary {
-  max-width: 38rem;
   margin-top: 1rem;
   font-size: 1.125rem;
   line-height: 1.65;
@@ -116,28 +113,27 @@ button {
   margin-top: 0;
 }
 
-.detail-section p {
-  margin: 0.75rem 0 0;
-  max-width: 38rem;
-  line-height: 1.7;
-}
-
 .bio-text,
 .contact-row,
 .detail-summary,
 .detail-section p,
-.bullet-item span:last-child,
-h1,
-h2 {
+.bullet-item span:last-child {
+  max-width: 38rem;
+}
+
+.detail-section p {
+  margin: 0.75rem 0 0;
+  line-height: 1.7;
+}
+
+:where(h1, h2, .bio-text, .contact-row, .detail-summary, .detail-section p, .bullet-item span:last-child) {
   text-wrap: pretty;
   overflow-wrap: anywhere;
 }
 
-.bio-text,
-.contact-row,
-.bullet-item {
+:where(.bio-text, .contact-row, .bullet-item, .detail-meta, .detail-section p) {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .bio-text {
@@ -159,8 +155,8 @@ h2 {
 .bullet-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
-  margin: 0.25rem 0 0.55rem;
+  gap: 0.55rem;
+  margin: 0.3rem 0 0.65rem;
   break-inside: avoid;
 }
 
@@ -178,10 +174,60 @@ h2 {
   white-space: nowrap;
 }
 
+@media (min-width: 1100px) {
+  h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    margin-top: 2.25rem;
+    line-height: 1.85rem;
+  }
+
+  .page-shell {
+    max-width: 45rem;
+    padding-top: 4rem;
+    padding-bottom: 6.5rem;
+  }
+
+  .bio-text,
+  .contact-row,
+  .detail-meta,
+  .detail-section p,
+  .bullet-item {
+    font-size: 1.03rem;
+    line-height: 1.72;
+  }
+
+  .detail-page {
+    padding-top: 2.5rem;
+  }
+
+  .detail-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .detail-summary {
+    margin-top: 1.125rem;
+    font-size: 1.18rem;
+    line-height: 1.75;
+  }
+
+  .detail-body {
+    gap: 2.25rem;
+  }
+
+  .bullet-item {
+    gap: 0.65rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
 @media (max-width: 767px) {
   .page-shell {
-    width: calc(100% - 2rem);
-    padding: 1.75rem 0 3rem;
+    padding: 1.75rem 1rem 3rem;
   }
 
   h1 {

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <DetailPage
-      category="Award"
+      category="Awards"
       meta="2nd Place · 2025.07"
       summary="Recognized for a personalized health meal and supplement subscription business plan grounded in individual health data."
       title="KNAPS Startup Project Competition"
