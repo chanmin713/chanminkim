@@ -7,10 +7,25 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <DetailPage title="Bio Lounge">
-      <p>Founder (2026.01 – )</p>
-      <p>Curate and share biotech/healthcare industry news in an anonymous, insight-driven chat community.</p>
-      <p>Facilitate discussions among students and professionals across investment, research, and business.</p>
+    <DetailPage
+      category="Experience"
+      meta="Founder · 2026.01 –"
+      summary="An anonymous, insight-driven community for people working on or around biotech and healthcare."
+      title="Bio Lounge"
+    >
+      <section className="detail-section">
+        <h2>Focus</h2>
+        <div className="bullet-section">
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>Curate and share biotech and healthcare industry news in a signal-first community format.</span>
+          </p>
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>Facilitate practical discussion across investment, research, and business.</span>
+          </p>
+        </div>
+      </section>
     </DetailPage>
   )
 }

@@ -7,10 +7,25 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <DetailPage title="GustoVenue">
-      <p>Co-founder (2025.11 – 2025.12)</p>
-      <p>Planned and operated a seasonal flower-bouquet pre-order brokerage service for students and local residents.</p>
-      <p>Built florist partnerships and managed end-to-end order/payment/delivery operations.</p>
+    <DetailPage
+      category="Experience"
+      meta="Co-founder · 2025.11 – 2025.12"
+      summary="A seasonal flower-bouquet pre-order brokerage service built for students and local residents."
+      title="GustoVenue"
+    >
+      <section className="detail-section">
+        <h2>Contributions</h2>
+        <div className="bullet-section">
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>Planned and operated end-to-end order, payment, and delivery workflows.</span>
+          </p>
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>Built florist partnerships and handled day-to-day operating coordination.</span>
+          </p>
+        </div>
+      </section>
     </DetailPage>
   )
 }

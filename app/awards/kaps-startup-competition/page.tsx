@@ -7,10 +7,25 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <DetailPage title="KNAPS Startup Project Competition">
-      <p>2nd Place (2025.07)</p>
-      <p>Issued by KNAPS (Korean National Association for Pharmaceutical Students).</p>
-      <p>Won with a personalized health meal &amp; supplement all-in-one subscription business plan based on personal health data.</p>
+    <DetailPage
+      category="Award"
+      meta="2nd Place · 2025.07"
+      summary="Recognized for a personalized health meal and supplement subscription business plan grounded in individual health data."
+      title="KNAPS Startup Project Competition"
+    >
+      <section className="detail-section">
+        <h2>Recognition</h2>
+        <div className="bullet-section">
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>Issued by KNAPS (Korean National Association for Pharmaceutical Students).</span>
+          </p>
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>Presented an all-in-one subscription model combining personalized meals and supplements.</span>
+          </p>
+        </div>
+      </section>
     </DetailPage>
   )
 }

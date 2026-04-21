@@ -7,9 +7,25 @@ export const metadata: Metadata = {
 
 export default function Page() {
   return (
-    <DetailPage title="Pluto">
-      <p>Co-founder &amp; CPO (2025.09 – 2025.12)</p>
-      <p>Built an AI-powered study platform for university students and led early product execution.</p>
+    <DetailPage
+      category="Experience"
+      meta="Co-founder & CPO · 2025.09 – 2025.12"
+      summary="An AI-powered study platform for university students built around everyday learning workflows."
+      title="Pluto"
+    >
+      <section className="detail-section">
+        <h2>Contributions</h2>
+        <div className="bullet-section">
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>Led early product execution as co-founder and CPO.</span>
+          </p>
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>Shaped the product around real university study behaviors and needs.</span>
+          </p>
+        </div>
+      </section>
     </DetailPage>
   )
 }
