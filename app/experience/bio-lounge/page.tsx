@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import DetailPage from '@/app/components/detail-page'
 
 export const metadata: Metadata = {
-  title: 'Bio Lounge | Chanmin Kim',
+  title: '[Bio Lounge] | Chanmin Kim',
 }
 
 export default function Page() {
@@ -11,7 +11,7 @@ export default function Page() {
       category="Experience"
       meta="Founder · 2026.01 –"
       summary="An anonymous, insight-driven community for people working on or around biotech and healthcare."
-      title="Bio Lounge"
+      title="[Bio Lounge]"
     >
       <section className="detail-section">
         <h2>Focus</h2>
