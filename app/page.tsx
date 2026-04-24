@@ -27,6 +27,13 @@ export default function Home() {
             </span>
           </p>
 
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>
+              Building tools for the bio ecosystem <span className="nowrap">— <a href="https://github.com/bio-rs/bio-rs" target="_blank" rel="noopener noreferrer">bio-rs</a></span>
+            </span>
+          </p>
+
           <p className="bullet-spacer" aria-hidden="true">{"\n"}</p>
 
           <p className="bullet-item"><span className="bullet-mark">•</span><span>{"And exploring new ideas for future projects and startups......"}</span></p>
