@@ -12,6 +12,10 @@ Chanmin Kim is a pharmacy student at Seoul National University (College of Pharm
 - Building a community for bio experts — [Bio Lounge]
 - Exploring new ideas for future projects and startups
 
+## Projects
+
+- Ch3rt — 3D stock charts (Next.js, Three.js). Live: https://ch3rt.vercel.app/ — Site page: /projects/ch3rt
+
 ## Experience
 
 - [Bio Lounge] — Founder (2026.01–)
@@ -41,7 +45,8 @@ Chanmin Kim is a pharmacy student at Seoul National University (College of Pharm
 
 ## Site Structure
 
-- / — Homepage with bio, experience, education, organizations, and awards
+- / — Homepage with bio, projects, experience, education, organizations, and awards
+- /projects/* — Detailed project pages
 - /experience/* — Detailed experience pages
 - /awards/* — Detailed award pages
 

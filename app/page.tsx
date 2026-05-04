@@ -39,6 +39,24 @@ export default function Home() {
           <p className="bullet-item"><span className="bullet-mark">•</span><span>{"And exploring new ideas for future projects and startups......"}</span></p>
         </div>
 
+        <h2>Projects</h2>
+        <div className="bullet-section">
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>
+              <Link href="/projects/ch3rt">Ch3rt</Link>
+              {" — 3D stock charts in the browser "}
+              <span className="nowrap">
+                (
+                <a href="https://ch3rt.vercel.app/" target="_blank" rel="noopener noreferrer">
+                  live
+                </a>
+                )
+              </span>
+            </span>
+          </p>
+        </div>
+
         <h2>Experience</h2>
         <div className="bullet-section">
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/bio-lounge">[Bio Lounge]</Link> — Founder <span className="nowrap">(2026.01 – )</span></span></p>
