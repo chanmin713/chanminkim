@@ -55,6 +55,20 @@ export default function Home() {
               </span>
             </span>
           </p>
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>
+              <Link href="/projects/haerin-codex-pet">Haerin Kang Codex Pet</Link>
+              {" — a custom Codex desktop pet "}
+              <span className="nowrap">
+                (
+                <a href="https://github.com/chanmin713/haerin-codex-pet" target="_blank" rel="noopener noreferrer">
+                  github
+                </a>
+                )
+              </span>
+            </span>
+          </p>
         </div>
 
         <h2>Experience</h2>

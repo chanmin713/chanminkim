@@ -15,6 +15,7 @@ Chanmin Kim is a pharmacy student at Seoul National University (College of Pharm
 ## Projects
 
 - Ch3rt — 3D stock charts (Next.js, Three.js). Live: https://ch3rt.vercel.app/ — Site page: /projects/ch3rt
+- Haerin Kang Codex Pet — Custom Codex desktop pet with manifest and animated spritesheet. Repo: https://github.com/chanmin713/haerin-codex-pet — Site page: /projects/haerin-codex-pet
 
 ## Experience
 
