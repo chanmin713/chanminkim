@@ -58,6 +58,13 @@ export default function Home() {
           <p className="bullet-item">
             <span className="bullet-mark">•</span>
             <span>
+              <Link href="/projects/talkto">TalkTo</Link>
+              {" — Medilux project selected for U300; backend development"}
+            </span>
+          </p>
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>
               <Link href="/projects/haerin-codex-pet">Haerin Kang Codex Pet</Link>
               {" — a custom Codex desktop pet "}
               <span className="nowrap">

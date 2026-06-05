@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: 'https://chanminkim.com/experience/pluto' },
     { url: 'https://chanminkim.com/experience/csm17' },
     { url: 'https://chanminkim.com/projects/ch3rt' },
+    { url: 'https://chanminkim.com/projects/talkto' },
     { url: 'https://chanminkim.com/projects/haerin-codex-pet' },
     { url: 'https://chanminkim.com/awards/kaps-startup-competition' },
     { url: 'https://chanminkim.com/awards/qwen-base-skyst-finalist' },
