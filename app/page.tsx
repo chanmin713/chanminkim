@@ -9,8 +9,7 @@ export default function Home() {
         <p className="contact-row">
           Contact me: <a href="mailto:chanmin713@snu.ac.kr" target="_blank" rel="noopener noreferrer">Email</a>,{"  "}
           <a href="https://www.linkedin.com/in/chanmin-kim/" target="_blank" rel="noopener noreferrer">LinkedIn</a>,{"  "}
-          <a href="https://github.com/chanmin713" target="_blank" rel="noopener noreferrer">GitHub</a>,{"  "}
-          <a href="https://x.com/chanminkimkr" target="_blank" rel="noopener noreferrer">x.com</a>
+          <a href="https://github.com/chanmin713" target="_blank" rel="noopener noreferrer">GitHub</a>
         </p>
 
         <h2>Now</h2>
@@ -27,13 +26,6 @@ export default function Home() {
             </span>
           </p>
 
-          <p className="bullet-item">
-            <span className="bullet-mark">•</span>
-            <span>
-              Building tools for the bio ecosystem <span className="nowrap">— <a href="https://github.com/bio-rs/bio-rs" target="_blank" rel="noopener noreferrer">bio-rs</a></span>
-            </span>
-          </p>
-
           <p className="bullet-spacer" aria-hidden="true">{"\n"}</p>
 
           <p className="bullet-item"><span className="bullet-mark">•</span><span>{"And exploring new ideas for future projects and startups......"}</span></p>
@@ -41,6 +33,12 @@ export default function Home() {
 
         <h2>Projects</h2>
         <div className="bullet-section">
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>
+              Building tools for the bio ecosystem <span className="nowrap">— <a href="https://github.com/bio-rs/bio-rs" target="_blank" rel="noopener noreferrer">bio-rs</a></span>
+            </span>
+          </p>
           <p className="bullet-item">
             <span className="bullet-mark">•</span>
             <span>
@@ -59,7 +57,7 @@ export default function Home() {
             <span className="bullet-mark">•</span>
             <span>
               <Link href="/projects/talkto">TalkTo</Link>
-              {" — Medilux project selected for U300; backend development"}
+              {" — Medilux Grand Prize winner; backend development"}
             </span>
           </p>
           <p className="bullet-item">
@@ -94,18 +92,17 @@ export default function Home() {
 
         <h2>Organizations</h2>
         <div className="bullet-section">
-          <p className="bullet-item"><span className="bullet-mark">•</span><span>Medilux (Healthcare Startup Club) — Medical role <span className="nowrap">(2026.03 – )</span></span></p>
-          <p className="bullet-item"><span className="bullet-mark">•</span><span>SNU Boxing Club (FOS) — Member <span className="nowrap">(2024.03 – )</span>, Leadership Team <span className="nowrap">(2025.03 – 2025.12)</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span>Medilux (Healthcare Startup Club) — Medical role <span className="nowrap">(2026.03 – 2026.07)</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span>SNU Boxing Club (FOS) — Member <span className="nowrap">(2024.03 – )</span>, Leadership Team <span className="nowrap">(2025.03 – 2025.12)</span>, Vice President <span className="nowrap">(2026.09 – )</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span>SNUAI — Vice President <span className="nowrap">(2025.01 – 2025.12)</span></span></p>
         </div>
 
         <h2>Awards</h2>
         <div className="bullet-section">
+          <p className="bullet-item"><span className="bullet-mark">•</span><span>National University Boxing Club Championship — <span className="nowrap">25th: 2nd Place (2026.08)</span>; <span className="nowrap">24th: 1st Place (2025.08)</span>; <span className="nowrap">23rd: 3rd Place (2024.08)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/awards/qwen-base-skyst-finalist">Qwen Base SKYST Hackathon by FLock.io</Link> — Finalist <span className="nowrap">(2025.11)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span>19th Gwanak-gu Boxing Association President's Cup — 3rd Place <span className="nowrap">(2025.09)</span></span></p>
-          <p className="bullet-item"><span className="bullet-mark">•</span><span>24th National University Boxing Club Championship — 1st Place <span className="nowrap">(2025.08)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/awards/kaps-startup-competition">KNAPS Startup Project Competition</Link> — 2nd Place <span className="nowrap">(2025.07)</span></span></p>
-          <p className="bullet-item"><span className="bullet-mark">•</span><span>23rd National University Boxing Club Championship — 3rd Place <span className="nowrap">(2024.08)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span>Gyeonggi Provincial Council Chairperson’s Commendation <span className="nowrap">(2023.12)</span></span></p>
         </div>
       </div>
