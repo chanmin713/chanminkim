@@ -5,7 +5,6 @@ export default function Home() {
     <main>
       <div className="page-shell">
         <h1>Chanmin Kim</h1>
-        <p className="bio-text">A pharmacy student and builder wandering in search of something only I can do</p>
         <p className="contact-row">
           Contact me: <a href="mailto:chanmin713@snu.ac.kr" target="_blank" rel="noopener noreferrer">Email</a>,{"  "}
           <a href="https://www.linkedin.com/in/chanmin-kim/" target="_blank" rel="noopener noreferrer">LinkedIn</a>,{"  "}
