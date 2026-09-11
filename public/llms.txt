@@ -16,7 +16,7 @@ Chanmin Kim is a pharmacy student at Seoul National University (College of Pharm
 ## Experience
 
 - [Bio Lounge] — Founder (2026.01–)
-- TalkTo — Selected for U300; backend development (2026-1). Site page: /experience/talkto
+- TalkTo — Selected for U300; backend developer (2026-1). Site page: /experience/talkto
 - Esoop Company — Business Development Intern (2026.01–2026.02)
 - GustoVenue — Co-founder (2025.11–2025.12)
 - Pluto — Co-founder & CPO (2025.09–2025.12)

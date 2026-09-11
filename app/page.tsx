@@ -39,7 +39,7 @@ export default function Home() {
             <span className="bullet-mark">•</span>
             <span>
               <Link href="/experience/talkto">TalkTo</Link>
-              {" — selected for U300; backend development "}
+              {" — selected for U300; backend developer "}
               <span className="nowrap">(2026-1)</span>
             </span>
           </p>
