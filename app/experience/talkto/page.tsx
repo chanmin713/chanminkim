@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <DetailPage
-      category="Project"
+      category="Experience"
       meta="Medilux project · Backend developer · Selected for U300 · 2026-1"
       summary={
         <>

@@ -15,7 +15,7 @@ Chanmin Kim is a pharmacy student at Seoul National University (College of Pharm
 
 ## Experience
 
-- TalkTo — Medilux Grand Prize winner, selected for U300; backend development (2026-1). Site page: /experience/talkto
+- TalkTo — Selected for U300; backend development (2026-1). Site page: /experience/talkto
 - [Bio Lounge] — Founder (2026.01–)
 - Esoop Company — Business Development Intern (2026.01–2026.02)
 - GustoVenue — Co-founder (2025.11–2025.12)
@@ -26,7 +26,7 @@ Chanmin Kim is a pharmacy student at Seoul National University (College of Pharm
 
 - Medilux (Healthcare Startup Club) — Medical role (2026.03–)
 - SNU Boxing Club (FOS) — Member (2024.03–), Leadership Team (2025.03–2025.12)
-- SNUAI — Vice President (2025.01–2025.12)
+- SNUAI — Vice President (2025)
 
 ## Awards
 

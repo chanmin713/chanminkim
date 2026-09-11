@@ -29,22 +29,20 @@ export default function Home() {
             </span>
           </p>
 
-          <p className="bullet-spacer" aria-hidden="true">{"\n"}</p>
-
           <p className="bullet-item"><span className="bullet-mark">•</span><span>{"And exploring new ideas for future projects and startups......"}</span></p>
         </div>
 
         <h2>Experience</h2>
         <div className="bullet-section">
+          <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/bio-lounge">[Bio Lounge]</Link> — Founder <span className="nowrap">(2026.01 – )</span></span></p>
           <p className="bullet-item">
             <span className="bullet-mark">•</span>
             <span>
               <Link href="/experience/talkto">TalkTo</Link>
-              {" — Medilux Grand Prize winner; selected for U300; backend development "}
+              {" — selected for U300; backend development "}
               <span className="nowrap">(2026-1)</span>
             </span>
           </p>
-          <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/bio-lounge">[Bio Lounge]</Link> — Founder <span className="nowrap">(2026.01 – )</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/esoop">Esoop Company</Link> — Business Development Intern <span className="nowrap">(2026.01 – 2026.02)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/gustovenue">GustoVenue</Link> — Co-founder <span className="nowrap">(2025.11 – 2025.12)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/pluto">Pluto</Link> — Co-founder &amp; CPO <span className="nowrap">(2025.09 – 2025.12)</span></span></p>
@@ -53,14 +51,14 @@ export default function Home() {
 
         <h2>Organizations</h2>
         <div className="bullet-section">
-          <p className="bullet-item"><span className="bullet-mark">•</span><span>Medilux (Healthcare Startup Club) — Medical role <span className="nowrap">(2026.03 – 2026.07)</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span>Medilux (Healthcare Startup Club) — Medical role <span className="nowrap">(2026-1)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span>SNU Boxing Club (FOS) — Member <span className="nowrap">(2024 ~ )</span>, Leadership Team <span className="nowrap">(2025)</span>, Vice President <span className="nowrap">(2026-2)</span></span></p>
-          <p className="bullet-item"><span className="bullet-mark">•</span><span>SNUAI — Vice President <span className="nowrap">(2025.01 – 2025.12)</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span>SNUAI — Vice President <span className="nowrap">(2025)</span></span></p>
         </div>
 
         <h2>Awards</h2>
         <div className="bullet-section">
-          <p className="bullet-item"><span className="bullet-mark">•</span><span>National University Boxing Club Championship — <span className="nowrap">25th: 2nd Place (2026)</span>; <span className="nowrap">24th: 1st Place (2025)</span>; <span className="nowrap">23rd: 3rd Place (2024)</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span>National University Boxing Club Championship — <span className="nowrap">2nd Place (2026)</span>; <span className="nowrap">1st Place (2025)</span>; <span className="nowrap">3rd Place (2024)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/awards/qwen-base-skyst-finalist">Qwen Base SKYST Hackathon by FLock.io</Link> — Finalist <span className="nowrap">(2025.11)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span>19th Gwanak-gu Boxing Association President's Cup — 3rd Place <span className="nowrap">(2025.09)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/awards/kaps-startup-competition">KNAPS Startup Project Competition</Link> — 2nd Place <span className="nowrap">(2025.07)</span></span></p>
