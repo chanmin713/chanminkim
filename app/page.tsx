@@ -43,6 +43,7 @@ export default function Home() {
               <span className="nowrap">(2026-1)</span>
             </span>
           </p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span>BZCF Fellowship — 1st Cohort <span className="nowrap">(2026)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/esoop">Esoop Company</Link> — Business Development Intern <span className="nowrap">(2026.01 – 2026.02)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/gustovenue">GustoVenue</Link> — Co-founder <span className="nowrap">(2025.11 – 2025.12)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/pluto">Pluto</Link> — Co-founder &amp; CPO <span className="nowrap">(2025.09 – 2025.12)</span></span></p>
