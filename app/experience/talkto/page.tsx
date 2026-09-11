@@ -9,7 +9,7 @@ export default function Page() {
   return (
     <DetailPage
       category="Project"
-      meta="Medilux project · Backend developer · Selected for U300"
+      meta="Medilux project · Backend developer · Selected for U300 · 2026-1"
       summary={
         <>
           TalkTo is an Archive-first product from Medilux for preserving family stories through subjects, guided questions, voice recordings, memories, and Voice Persona flows. I was responsible for backend development.

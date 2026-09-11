@@ -40,7 +40,8 @@ export default function Home() {
             <span className="bullet-mark">•</span>
             <span>
               <Link href="/experience/talkto">TalkTo</Link>
-              {" — Medilux Grand Prize winner; selected for U300; backend development"}
+              {" — Medilux Grand Prize winner; selected for U300; backend development "}
+              <span className="nowrap">(2026-1)</span>
             </span>
           </p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/bio-lounge">[Bio Lounge]</Link> — Founder <span className="nowrap">(2026.01 – )</span></span></p>
