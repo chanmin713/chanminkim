@@ -17,6 +17,10 @@ export default function Home() {
             <span className="bullet-mark">•</span>
             <span>Majoring in Pharmacy at SNU since 2024</span>
           </p>
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>SNU Boxing Club (FOS) — Vice President</span>
+          </p>
 
           <p className="bullet-item">
             <span className="bullet-mark">•</span>
@@ -30,53 +34,15 @@ export default function Home() {
           <p className="bullet-item"><span className="bullet-mark">•</span><span>{"And exploring new ideas for future projects and startups......"}</span></p>
         </div>
 
-        <h2>Projects</h2>
-        <div className="bullet-section">
-          <p className="bullet-item">
-            <span className="bullet-mark">•</span>
-            <span>
-              Building tools for the bio ecosystem <span className="nowrap">— <a href="https://github.com/bio-rs/bio-rs" target="_blank" rel="noopener noreferrer">bio-rs</a></span>
-            </span>
-          </p>
-          <p className="bullet-item">
-            <span className="bullet-mark">•</span>
-            <span>
-              <Link href="/projects/ch3rt">Ch3rt</Link>
-              {" — 3D stock charts in the browser "}
-              <span className="nowrap">
-                (
-                <a href="https://ch3rt.vercel.app/" target="_blank" rel="noopener noreferrer">
-                  live
-                </a>
-                )
-              </span>
-            </span>
-          </p>
-          <p className="bullet-item">
-            <span className="bullet-mark">•</span>
-            <span>
-              <Link href="/projects/talkto">TalkTo</Link>
-              {" — Medilux Grand Prize winner; backend development"}
-            </span>
-          </p>
-          <p className="bullet-item">
-            <span className="bullet-mark">•</span>
-            <span>
-              <Link href="/projects/haerin-codex-pet">Haerin Kang Codex Pet</Link>
-              {" — a custom Codex desktop pet "}
-              <span className="nowrap">
-                (
-                <a href="https://github.com/chanmin713/haerin-codex-pet" target="_blank" rel="noopener noreferrer">
-                  github
-                </a>
-                )
-              </span>
-            </span>
-          </p>
-        </div>
-
         <h2>Experience</h2>
         <div className="bullet-section">
+          <p className="bullet-item">
+            <span className="bullet-mark">•</span>
+            <span>
+              <Link href="/experience/talkto">TalkTo</Link>
+              {" — Medilux Grand Prize winner; selected for U300; backend development"}
+            </span>
+          </p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/bio-lounge">[Bio Lounge]</Link> — Founder <span className="nowrap">(2026.01 – )</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/esoop">Esoop Company</Link> — Business Development Intern <span className="nowrap">(2026.01 – 2026.02)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/gustovenue">GustoVenue</Link> — Co-founder <span className="nowrap">(2025.11 – 2025.12)</span></span></p>
@@ -84,21 +50,16 @@ export default function Home() {
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/experience/csm17">CSM17</Link> — Backend Developer <span className="nowrap">(2025.07 – 2025.08)</span></span></p>
         </div>
 
-        <h2>Education</h2>
-        <div className="bullet-section">
-          <p className="bullet-item"><span className="bullet-mark">•</span><span>Seoul National University, College of Pharmacy — B.S. in Pharmacy <span className="nowrap">(2024.03 – )</span></span></p>
-        </div>
-
         <h2>Organizations</h2>
         <div className="bullet-section">
           <p className="bullet-item"><span className="bullet-mark">•</span><span>Medilux (Healthcare Startup Club) — Medical role <span className="nowrap">(2026.03 – 2026.07)</span></span></p>
-          <p className="bullet-item"><span className="bullet-mark">•</span><span>SNU Boxing Club (FOS) — Member <span className="nowrap">(2024.03 – )</span>, Leadership Team <span className="nowrap">(2025.03 – 2025.12)</span>, Vice President <span className="nowrap">(2026.09 – )</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span>SNU Boxing Club (FOS) — Member <span className="nowrap">(2024 ~ )</span>, Leadership Team <span className="nowrap">(2025)</span>, Vice President <span className="nowrap">(2026-2)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span>SNUAI — Vice President <span className="nowrap">(2025.01 – 2025.12)</span></span></p>
         </div>
 
         <h2>Awards</h2>
         <div className="bullet-section">
-          <p className="bullet-item"><span className="bullet-mark">•</span><span>National University Boxing Club Championship — <span className="nowrap">25th: 2nd Place (2026.08)</span>; <span className="nowrap">24th: 1st Place (2025.08)</span>; <span className="nowrap">23rd: 3rd Place (2024.08)</span></span></p>
+          <p className="bullet-item"><span className="bullet-mark">•</span><span>National University Boxing Club Championship — <span className="nowrap">25th: 2nd Place (2026)</span>; <span className="nowrap">24th: 1st Place (2025)</span>; <span className="nowrap">23rd: 3rd Place (2024)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/awards/qwen-base-skyst-finalist">Qwen Base SKYST Hackathon by FLock.io</Link> — Finalist <span className="nowrap">(2025.11)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span>19th Gwanak-gu Boxing Association President's Cup — 3rd Place <span className="nowrap">(2025.09)</span></span></p>
           <p className="bullet-item"><span className="bullet-mark">•</span><span><Link href="/awards/kaps-startup-competition">KNAPS Startup Project Competition</Link> — 2nd Place <span className="nowrap">(2025.07)</span></span></p>

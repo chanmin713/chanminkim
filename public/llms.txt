@@ -9,26 +9,18 @@ Chanmin Kim is a pharmacy student at Seoul National University (College of Pharm
 ## Current
 
 - Majoring in Pharmacy at SNU since 2024
+- SNU Boxing Club (FOS) — Vice President
 - Building a community for bio experts — [Bio Lounge]
 - Exploring new ideas for future projects and startups
 
-## Projects
-
-- Ch3rt — 3D stock charts (Next.js, Three.js). Live: https://ch3rt.vercel.app/ — Site page: /projects/ch3rt
-- TalkTo — Medilux Archive-first product for family stories, selected for U300; Chanmin handled backend development. Site page: /projects/talkto
-- Haerin Kang Codex Pet — Custom Codex desktop pet with manifest and animated spritesheet. Repo: https://github.com/chanmin713/haerin-codex-pet — Site page: /projects/haerin-codex-pet
-
 ## Experience
 
+- TalkTo — Medilux Grand Prize winner, selected for U300; backend development. Site page: /experience/talkto
 - [Bio Lounge] — Founder (2026.01–)
 - Esoop Company — Business Development Intern (2026.01–2026.02)
 - GustoVenue — Co-founder (2025.11–2025.12)
 - Pluto — Co-founder & CPO (2025.09–2025.12)
 - CSM17 — Backend Developer (2025.07–2025.08)
-
-## Education
-
-- Seoul National University, College of Pharmacy — B.S. in Pharmacy (2024.03–)
 
 ## Organizations
 
@@ -40,15 +32,14 @@ Chanmin Kim is a pharmacy student at Seoul National University (College of Pharm
 
 - Qwen Base SKYST Hackathon by FLock.io — Finalist (2025.11)
 - 19th Gwanak-gu Boxing Association President's Cup — 3rd Place (2025.09)
-- 24th National University Boxing Club Championship — 1st Place (2025.08)
+- 24th National University Boxing Club Championship — 1st Place (2025)
 - KNAPS Startup Project Competition — 2nd Place (2025.07)
-- 23rd National University Boxing Club Championship — 3rd Place (2024.08)
+- 23rd National University Boxing Club Championship — 3rd Place (2024)
 - Gyeonggi Provincial Council Chairperson's Commendation (2023.12)
 
 ## Site Structure
 
-- / — Homepage with bio, projects, experience, education, organizations, and awards
-- /projects/* — Detailed project pages
+- / — Homepage with bio, experience, organizations, and awards
 - /experience/* — Detailed experience pages
 - /awards/* — Detailed award pages
 
