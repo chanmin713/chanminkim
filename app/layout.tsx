@@ -6,7 +6,7 @@ import IabBreakout from './iab-breakout'
 export const metadata: Metadata = {
   metadataBase: new URL('https://chanminkim.com'),
   title: 'Chanmin Kim',
-  description: 'A pharmacy student and builder wandering in search of something only I can do.',
+  description: 'Pharmacy student at Seoul National University and builder.',
   icons: { icon: '/favicon.png' },
   openGraph: { images: ['/og.webp'] },
 }
