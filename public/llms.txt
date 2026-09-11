@@ -4,7 +4,7 @@
 
 ## About
 
-Chanmin Kim is a pharmacy student at Seoul National University (College of Pharmacy, B.S. in Pharmacy, 2024–) and a builder exploring new ideas for future projects and startups.
+Chanmin Kim is a pharmacy student at Seoul National University (College of Pharmacy, B.S. in Pharmacy, since 2024) and a builder exploring new ideas for future projects and startups.
 
 ## Current
 
@@ -15,8 +15,8 @@ Chanmin Kim is a pharmacy student at Seoul National University (College of Pharm
 
 ## Experience
 
-- TalkTo — Selected for U300; backend development (2026-1). Site page: /experience/talkto
 - [Bio Lounge] — Founder (2026.01–)
+- TalkTo — Selected for U300; backend development (2026-1). Site page: /experience/talkto
 - Esoop Company — Business Development Intern (2026.01–2026.02)
 - GustoVenue — Co-founder (2025.11–2025.12)
 - Pluto — Co-founder & CPO (2025.09–2025.12)
@@ -24,8 +24,8 @@ Chanmin Kim is a pharmacy student at Seoul National University (College of Pharm
 
 ## Organizations
 
-- Medilux (Healthcare Startup Club) — Medical role (2026.03–)
-- SNU Boxing Club (FOS) — Member (2024.03–), Leadership Team (2025.03–2025.12)
+- Medilux (Healthcare Startup Club) — Medical role (2026-1)
+- SNU Boxing Club (FOS) — Member (2024 ~), Leadership Team (2025), Vice President (2026-2)
 - SNUAI — Vice President (2025)
 
 ## Awards
